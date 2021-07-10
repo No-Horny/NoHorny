@@ -1,6 +1,8 @@
 <template>
   <nav>
     <h1 class="logo">No Horny</h1>
+
+    <router-link to="/" v-if="$route.name !== 'home'"><ion-icon name="chevron-back-outline"></ion-icon></router-link>
   </nav>
 </template>
 
@@ -21,8 +23,8 @@ nav {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  padding: 8px;
+  justify-content: center;
+  padding: 16px;
   height: 60px;
   background: vars.$navbar_primary;
   box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.25);
@@ -38,5 +40,12 @@ nav {
   color: #1A1818;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
+}
+a {
+  color: #000;
+  display: grid;
+  place-items: center;
+  font-size: 32px;
+  margin-left: auto;
 }
 </style>

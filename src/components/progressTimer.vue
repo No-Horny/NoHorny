@@ -2,7 +2,7 @@
   <div class="timer">
     <div>
       <h2>{{timer}}</h2>
-      <p>Days, Hour, Minutes, Seconds</p>
+      <p>Days, Hours, Minutes, Seconds</p>
     </div>
     <button>
       <ion-icon name="reload-outline"></ion-icon>
@@ -13,12 +13,21 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 
+type DataTypes = {
+  current: Date;
+  timer: string
+}
+
 export default defineComponent({
   name: 'ProgressTimer',
-  data() {
+  data(): DataTypes {
     return {
+      current: new Date(),
       timer: '00:00:00:00'
     }
+  },
+  created() {
+
   },
   setup() {
     
@@ -41,7 +50,7 @@ export default defineComponent({
 }
 p {
   font-weight: 300;
-  font-size: 16px;
+  font-size: 14px;
   display: flex;
   align-items: center;
   text-align: center;
@@ -52,7 +61,7 @@ h2 {
 }
 button {
   border: 0;
-  width: 64px;
+  min-width: 64px;
   height: 64px;
   background: vars.$accent_primary;
   box-shadow: inset 0px 0px 10px 4px rgba(0, 0, 0, 0.1);

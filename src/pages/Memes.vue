@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <h2>404 - Page not found</h2>
+    <h2>Memes to make you happy</h2>
   </div>
 </template>
 
@@ -8,7 +8,7 @@
 import { defineComponent } from "vue";
 
 export default defineComponent({
-  name: "404",
+  name: "Memes",
   setup() {},
 });
 </script>

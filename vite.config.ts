@@ -15,8 +15,8 @@ export default defineConfig({
     VitePWA({
       registerType: "autoUpdate",
       manifest: {
-        theme_color: "",
-        background_color: "#f69435",
+        theme_color: "#2AECA5",
+        background_color: "#C4EBD7",
         display: "standalone",
         scope: "/",
         start_url: "/",
