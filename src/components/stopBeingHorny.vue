@@ -19,14 +19,14 @@
       <p>Communities</p>
     </div>
     <div
-      @click="1 == 2 ? $router.push('/memes') : notWorking()"
+      @click="1 + 1 !== 2 ? $router.push('/memes') : notWorking()"
       class="disabled"
     >
       <img src="https://i.redd.it/s4tsrma5gsd61.jpg" />
       <p>Memes</p>
     </div>
     <div
-      @click="1 == 2 ? $router.push('/books') : notWorking()"
+      @click="1 + 1 !== 2 ? $router.push('/books') : notWorking()"
       class="disabled"
     >
       <img
