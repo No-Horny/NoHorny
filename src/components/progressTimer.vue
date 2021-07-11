@@ -82,7 +82,7 @@ export default defineComponent({
 @use '../styles/variables' as vars;
 .timer {
   background: vars.$accent_primary;
-  width: min(360px, 100% - 64px);
+  width: min(360px, 100% - 32px);
   border-radius: 10px;
   padding: 16px;
   display: flex;

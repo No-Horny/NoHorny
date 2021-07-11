@@ -79,5 +79,9 @@ button {
     opacity: 1;
     filter: brightness(.8);
   }
+  @media screen and (max-width: 360px) {
+    height: 46px;
+    font-size: 15px;
+  }
 }
 </style>
