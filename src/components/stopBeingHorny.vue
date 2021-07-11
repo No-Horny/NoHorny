@@ -8,9 +8,9 @@
       <img src="https://img.freepik.com/free-vector/man-meditating-concept_23-2148508453.jpg?size=338&ext=jpg" />
       <p>Meditation</p>
     </div>
-    <div @click="$router.push('/wallpapers')">
-      <img src="https://i.pinimg.com/564x/bf/ee/62/bfee62eb3e99d276310ec81ec8d21445.jpg" />
-      <p>Wallpapers</p>
+    <div @click="$router.push('/books')">
+      <img src="https://image.freepik.com/free-vector/man-reading-book-while-walking-city_74855-7608.jpg" />
+      <p>Books</p>
     </div>
     <div @click="$router.push('/phrases')">
       <img src="https://images-na.ssl-images-amazon.com/images/I/619UY2ljb0L.jpg" />
@@ -42,6 +42,9 @@ export default defineComponent({
   flex-wrap: wrap;
   margin: 32px;
   gap: 10px;
+  > div {
+    cursor: pointer;
+  }
 }
 img {
   width: 96px;

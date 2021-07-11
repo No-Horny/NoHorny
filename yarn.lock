@@ -906,6 +906,11 @@
   dependencies:
     "@hapi/hoek" "^8.3.0"
 
+"@iconify/vue@^3.0.0-beta.1":
+  version "3.0.0-beta.1"
+  resolved "https://registry.yarnpkg.com/@iconify/vue/-/vue-3.0.0-beta.1.tgz#2cd2a775510cdb9f22c9eda94d4c2080d03fee2d"
+  integrity sha512-8FJRUj3y47FVBbRNeaf0R0MWlwmPiDRCR//BcvOKSVjOjNar/qLysn3Ns0cyQZJGOwxpsWkRpW3WrfX4JywlAg==
+
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
   resolved "https://registry.yarnpkg.com/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz#7619c2eb21b25483f6d167548b4cfd5a7488c3d5"
@@ -2646,6 +2651,11 @@ supports-color@^7.0.0, supports-color@^7.1.0:
   integrity sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw==
   dependencies:
     has-flag "^4.0.0"
+
+sweetalert2@^11.0.18:
+  version "11.0.18"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-11.0.18.tgz#9547859cc1a79815d5d02a6e0d1a3d44da3f8dc1"
+  integrity sha512-sF6huRQqqRGz7p9F8XFKSICl5hOiXjjpmnwAO8vlyJKAyMNZb2fvdok11JIGQjqcqVMIag/VLNWF4eEsIKQKGw==
 
 temp-dir@^2.0.0:
   version "2.0.0"

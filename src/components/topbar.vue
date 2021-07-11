@@ -2,15 +2,21 @@
   <nav>
     <h1 class="logo">No Horny</h1>
 
-    <router-link to="/" v-if="$route.name !== 'home'"><ion-icon name="chevron-back-outline"></ion-icon></router-link>
+    <router-link to="/" v-if="$route.name !== 'home'">
+      <icon icon="ion:chevron-back-outline" />
+    </router-link>
   </nav>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import { Icon } from '@iconify/vue/dist/iconify';
 
 export default defineComponent({
   name: 'TopBar',
+  components: {
+    Icon
+  },
   setup() {
     
   },
@@ -47,5 +53,11 @@ a {
   place-items: center;
   font-size: 32px;
   margin-left: auto;
+  svg {
+    width: 32px;
+    height: 32px;
+    color: #000;
+    fill: #000;
+  }
 }
 </style>

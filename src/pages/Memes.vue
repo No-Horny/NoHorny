@@ -1,6 +1,7 @@
 <template>
   <div class="page">
     <h2>Memes to make you happy</h2>
+    <img src="../assets/this_feature_not_implemented.png" alt="This feature not implemented!">
   </div>
 </template>
 
@@ -13,4 +14,9 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+img {
+  width: min(360px, 100% - 64px);
+  border-radius: 10px;
+}
+</style>
