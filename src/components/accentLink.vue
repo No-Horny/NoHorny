@@ -4,6 +4,7 @@
     <div>
       <h2>{{ title }}</h2>
       <p>{{ description }}</p>
+      <p v-if="price">Price: {{price}}</p>
     </div>
   </a>
 </template>
@@ -35,6 +36,10 @@ export default defineComponent({
       required: false,
       default: '#4083d1'
     },
+    price: {
+      type: String,
+      required: false,
+    },
     to: {
       type: String,
       required: true,
@@ -59,6 +64,7 @@ a {
     font-weight: 500;
     font-size: 20px;
     line-height: 26px;
+    text-decoration: underline;
   }
   p {
     font-weight: 300;

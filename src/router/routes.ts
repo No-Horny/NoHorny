@@ -1,9 +1,10 @@
 import Home from "../pages/Home.vue";
 import Page404 from "../pages/404.vue";
-import Memes from '../pages/Memes.vue'
-import Meditation from '../pages/Meditation.vue'
-import Communities from '../pages/Communities.vue'
-import Phrases from '../pages/Phrases.vue'
+import Memes from "../pages/Memes.vue";
+import Meditation from "../pages/Meditation.vue";
+import Communities from "../pages/Communities.vue";
+import Phrases from "../pages/Phrases.vue";
+import Books from "../pages/Books.vue";
 
 export const routes = [
   {
@@ -13,28 +14,34 @@ export const routes = [
     component: Home,
   },
   {
-    path: '/memes',
-    name: 'memes',
+    path: "/memes",
+    name: "memes",
     title: "Memes",
-    component: Memes
+    component: Memes,
   },
   {
-    path: '/meditation',
-    name: 'meditation',
-    title: 'Meditation',
-    component: Meditation
+    path: "/meditation",
+    name: "meditation",
+    title: "Meditation",
+    component: Meditation,
   },
   {
-    path: '/communities',
-    name: 'communities',
-    title: 'Communities',
-    component: Communities
+    path: "/communities",
+    name: "communities",
+    title: "Communities",
+    component: Communities,
   },
   {
-    path: '/phrases',
-    name: 'phrases',
-    title: 'Phrases',
-    component: Phrases
+    path: "/phrases",
+    name: "phrases",
+    title: "Phrases",
+    component: Phrases,
+  },
+  {
+    path: "/books",
+    name: "books",
+    title: "Books",
+    component: Books,
   },
   {
     path: "/:pathMatch(.*)*",
