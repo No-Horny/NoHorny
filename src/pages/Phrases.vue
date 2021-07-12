@@ -18,7 +18,7 @@ type Phrase = {
 };
 
 type DataTypes = {
-  phrases: [];
+  phrases: Phrase[];
 };
 
 export default defineComponent({
