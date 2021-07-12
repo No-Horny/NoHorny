@@ -50,5 +50,5 @@
 </ul>
 <h3>ToDo</h3>
 
-- [ ] Integrate the API to website
+- [x] Integrate the API to website
 - [ ] Create Memes and Wallpapers, page design
