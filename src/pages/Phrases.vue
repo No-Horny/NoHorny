@@ -10,15 +10,8 @@ import { defineComponent } from "vue";
 import axios from "axios";
 import PhraseComponent from "../components/phraseComponent.vue";
 
-type Phrase = {
-  author: string;
-  phrase: string;
-  pureId: string;
-  id: string;
-};
-
 type DataTypes = {
-  phrases: Phrase[];
+  phrases: any[];
 };
 
 export default defineComponent({
