@@ -1,7 +1,9 @@
 <template>
   <div class="page">
     <h2>Motivational Phrases</h2>
-    <phrase-component v-for="(phrase, key) in phrases" :key="key" :author="phrase.author" :phrase="phrase.phrase" />
+    <div class="phrases">
+      <phrase-component v-for="(phrase, key) in phrases" :key="key" :author="phrase?.author" :phrase="phrase?.phrase" />
+    </div>
   </div>
 </template>
 
@@ -35,4 +37,12 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.phrases {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+</style>
