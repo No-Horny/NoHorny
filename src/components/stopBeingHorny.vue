@@ -18,6 +18,12 @@
       />
       <p>Communities</p>
     </div>
+    <div @click="$router.push('/books')">
+      <img
+        src="https://image.freepik.com/free-vector/man-reading-book-while-walking-city_74855-7608.jpg"
+      />
+      <p>Books</p>
+    </div>
     <div
       @click="1 + 1 !== 2 ? $router.push('/memes') : notWorking()"
       class="disabled"
@@ -26,13 +32,13 @@
       <p>Memes</p>
     </div>
     <div
-      @click="1 + 1 !== 2 ? $router.push('/books') : notWorking()"
+      @click="1 + 1 !== 2 ? $router.push('/wallpapers') : notWorking()"
       class="disabled"
     >
       <img
-        src="https://image.freepik.com/free-vector/man-reading-book-while-walking-city_74855-7608.jpg"
+        src="https://i.pinimg.com/474x/ab/68/1c/ab681c415bd1c263de0d8b3404e9d4d2.jpg"
       />
-      <p>Books</p>
+      <p>Wallpapers</p>
     </div>
   </div>
 </template>
@@ -57,18 +63,22 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   margin: 32px;
-  gap: 10px;
+  gap: 8px;
   > div {
     cursor: pointer;
+    transition: filter 0.2s;
     &.disabled {
       cursor: not-allowed;
-      filter: brightness(0.5);
+      filter: brightness(0.5) !important;
     }
+    &:hover {
+      filter: brightness(0.8);
+    }
+  }
+  @media screen and (max-width: 550px) {
   }
 }
 img {
