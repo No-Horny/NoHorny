@@ -1,18 +1,42 @@
 <template>
   <div class="page">
     <h2>Motivational Phrases</h2>
-    <phrase-component phrase="Learn as if you will live forever, live like you will die tomorrow." author="Mahatma Gandhi" />
+    <phrase-component v-for="(phrase, key) in phrases" :key="key" :author="phrase.author" :phrase="phrase.phrase" />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import axios from "axios";
 import PhraseComponent from "../components/phraseComponent.vue";
+
+type Phrase = {
+  author: string;
+  phrase: string;
+  pureId: string;
+  id: string;
+};
+
+type DataTypes = {
+  phrases: [];
+};
 
 export default defineComponent({
   name: "Phrases",
   components: {
     PhraseComponent,
+  },
+  data(): DataTypes {
+    return {
+      phrases: [],
+    };
+  },
+  mounted() {
+    axios.get("https://api.nohorny.ga/phrases").then((res) => {
+
+      this.phrases = res.data.phrases
+    })
+    .catch((err) => console.log(err))
   },
   setup() {},
 });
