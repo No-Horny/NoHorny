@@ -7,7 +7,7 @@
         :key="key"
         :title="book.title"
         :description="book.author"
-        :imgUrl="book.imgURL"
+        :imgUrl="book.image"
         :imgAlt="book.title"
         :price="book.price"
         :to="book.url"
