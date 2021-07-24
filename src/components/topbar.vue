@@ -2,9 +2,9 @@
   <nav>
     <h1 class="logo">No Horny</h1>
 
-    <router-link to="/" v-if="$route.name !== 'home'">
+    <a @click="$router.go(-1)" v-if="$route.name !== 'home'">
       <icon icon="ion:chevron-back-outline" />
-    </router-link>
+    </a>
   </nav>
 </template>
 

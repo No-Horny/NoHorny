@@ -1,10 +1,11 @@
 import Home from "../pages/Home.vue";
 import Page404 from "../pages/404.vue";
-import Memes from "../pages/Memes.vue";
+import Happy from "../pages/Happy.vue";
 import Meditation from "../pages/Meditation.vue";
 import Communities from "../pages/Communities.vue";
 import Phrases from "../pages/Phrases.vue";
 import Books from "../pages/Books.vue";
+import Shibas from '../pages/Shibas.vue';
 
 export const routes = [
   {
@@ -14,10 +15,16 @@ export const routes = [
     component: Home,
   },
   {
-    path: "/memes",
-    name: "memes",
-    title: "Memes",
-    component: Memes,
+    path: "/happy",
+    name: "happy",
+    title: "Happy",
+    component: Happy,
+  },
+  {
+    path: "/happy/shibas",
+    name: "shibas",
+    title: "Shibas",
+    component: Shibas,
   },
   {
     path: "/meditation",

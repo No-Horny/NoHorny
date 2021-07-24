@@ -3,33 +3,36 @@
     <div @click="$router.push('/meditation')">
       <img
         src="https://img.freepik.com/free-vector/man-meditating-concept_23-2148508453.jpg?size=338&ext=jpg"
+        alt="meditation image"
       />
       <p>Meditation</p>
     </div>
     <div @click="$router.push('/phrases')">
       <img
         src="https://images-na.ssl-images-amazon.com/images/I/619UY2ljb0L.jpg"
+        alt="phrase image"
       />
       <p>Phrases</p>
     </div>
     <div @click="$router.push('/communities')">
       <img
         src="https://img.freepik.com/free-vector/teamwork-people-with-puzzle-pieces_24877-54950.jpg?size=338&ext=jpg"
+        alt="communitie image"
       />
       <p>Communities</p>
     </div>
     <div @click="$router.push('/books')">
       <img
         src="https://image.freepik.com/free-vector/man-reading-book-while-walking-city_74855-7608.jpg"
+        alt="books image"
       />
       <p>Books</p>
     </div>
-    <div
-      @click="1 + 1 !== 2 ? $router.push('/memes') : notWorking()"
-      class="disabled"
-    >
-      <img src="https://i.redd.it/s4tsrma5gsd61.jpg" />
-      <p>Memes</p>
+    <div @click="$router.push('/happy')">
+      <img src="https://i.redd.it/s4tsrma5gsd61.jpg"
+        alt="be happy image"
+       />
+      <p>Be happy</p>
     </div>
     <div
       @click="1 + 1 !== 2 ? $router.push('/wallpapers') : notWorking()"
@@ -37,6 +40,7 @@
     >
       <img
         src="https://i.pinimg.com/474x/ab/68/1c/ab681c415bd1c263de0d8b3404e9d4d2.jpg"
+        alt="wallpaper image"
       />
       <p>Wallpapers</p>
     </div>
