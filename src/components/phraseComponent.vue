@@ -1,15 +1,17 @@
 <template>
   <div class="phrase">
-    <p>“{{phrase}}”</p>
-    <small><em>{{author}}</em></small>
+    <p>“{{ phrase }}”</p>
+    <small
+      ><em>{{ author }}</em></small
+    >
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent } from "vue";
 
 export default defineComponent({
-  name: 'PhraseComponent',
+  name: "PhraseComponent",
   props: {
     phrase: {
       type: String,
@@ -18,13 +20,11 @@ export default defineComponent({
     author: {
       type: String,
       required: false,
-      default: 'Unknow Author'
-    }
+      default: "Unknow Author",
+    },
   },
-  setup() {
-    
-  },
-})
+  setup() {},
+});
 </script>
 
 <style lang="scss" scoped>

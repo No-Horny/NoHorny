@@ -4,7 +4,7 @@
     <div>
       <h2>{{ title }}</h2>
       <p>{{ description }}</p>
-      <p v-if="price">Price: {{price}}</p>
+      <p v-if="price">Price: {{ price }}</p>
     </div>
   </a>
 </template>
@@ -34,7 +34,7 @@ export default defineComponent({
     background: {
       type: String,
       required: false,
-      default: '#4083d1'
+      default: "#4083d1",
     },
     price: {
       type: String,

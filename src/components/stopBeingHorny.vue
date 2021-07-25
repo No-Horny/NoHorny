@@ -29,9 +29,7 @@
       <p>Books</p>
     </div>
     <div @click="$router.push('/happy')">
-      <img src="https://i.redd.it/s4tsrma5gsd61.jpg"
-        alt="be happy image"
-       />
+      <img src="https://i.redd.it/s4tsrma5gsd61.jpg" alt="be happy image" />
       <p>Be happy</p>
     </div>
     <div

@@ -2,7 +2,9 @@
   <div class="page">
     <h2>What helps you to be happy?</h2>
     <div class="items">
-      <accent-button @click="$router.push('/happy/shibas')">Shiba Inu</accent-button>
+      <accent-button @click="$router.push('/happy/shibas')"
+        >Shiba Inu</accent-button
+      >
     </div>
   </div>
 </template>

@@ -5,7 +5,7 @@ import Meditation from "../pages/Meditation.vue";
 import Communities from "../pages/Communities.vue";
 import Phrases from "../pages/Phrases.vue";
 import Books from "../pages/Books.vue";
-import Shibas from '../pages/Shibas.vue';
+import Shibas from "../pages/Shibas.vue";
 
 export const routes = [
   {

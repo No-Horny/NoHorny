@@ -6,22 +6,21 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import { Icon } from '@iconify/vue/dist/iconify';
-import Swal from 'sweetalert2'
-import 'sweetalert2/src/sweetalert2.scss'
+import { defineComponent } from "vue";
+import { Icon } from "@iconify/vue/dist/iconify";
+import Swal from "sweetalert2";
+import "sweetalert2/src/sweetalert2.scss";
 
 export default defineComponent({
-  name: 'PanicButton',
+  name: "PanicButton",
   components: {
-    Icon
+    Icon,
   },
   methods: {
     async respiration() {
-
       Swal.fire({
-        title: 'Not working yet!',
-      })
+        title: "Not working yet!",
+      });
 
       // const firstStep = await Swal.fire({
       //   title: "Let's try to calm down with guided breathing.",
@@ -37,22 +36,20 @@ export default defineComponent({
       // firstStep.isConfirmed && await Swal.fire({
       //   title: 'Inhale for 4 seconds, hold for 4, and exhale for 6 seconds.',
       //   html: `
-          
+
       //   `,
       //   confirmButtonText: 'Next',
       // })
-    }
+    },
   },
-  setup() {
-    
-  },
-})
+  setup() {},
+});
 </script>
 
 <style lang="scss" scoped>
 button {
   height: 58px;
-  background: #FAA916;
+  background: #faa916;
   border-radius: 50px;
   position: fixed;
   bottom: 0;
@@ -66,8 +63,8 @@ button {
   justify-content: space-around;
   font-weight: 500;
   margin: 16px;
-  opacity: .7;
-  transition: all ease .2s;
+  opacity: 0.7;
+  transition: all ease 0.2s;
   gap: 8px;
   svg {
     width: 30px;
@@ -77,7 +74,7 @@ button {
   }
   &:hover {
     opacity: 1;
-    filter: brightness(.8);
+    filter: brightness(0.8);
   }
   @media screen and (max-width: 360px) {
     height: 46px;

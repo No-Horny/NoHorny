@@ -9,18 +9,16 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import { Icon } from '@iconify/vue/dist/iconify';
+import { defineComponent } from "vue";
+import { Icon } from "@iconify/vue/dist/iconify";
 
 export default defineComponent({
-  name: 'TopBar',
+  name: "TopBar",
   components: {
-    Icon
+    Icon,
   },
-  setup() {
-    
-  },
-})
+  setup() {},
+});
 </script>
 
 <style lang="scss" scoped>
@@ -38,12 +36,12 @@ nav {
   margin-bottom: 32px;
 }
 .logo {
-  font-family: 'Port Lligat Sans', sans-serif;
+  font-family: "Port Lligat Sans", sans-serif;
   display: flex;
   align-items: center;
   text-align: center;
   font-size: 2rem;
-  color: #1A1818;
+  color: #1a1818;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
 }
