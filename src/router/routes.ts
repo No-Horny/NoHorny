@@ -3,6 +3,7 @@ import Page404 from "../pages/404.vue";
 import Happy from "../pages/Happy.vue";
 import Meditation from "../pages/Meditation.vue";
 import Communities from "../pages/Communities.vue";
+import Wallpapers from "../pages/Wallpapers.vue";
 import Phrases from "../pages/Phrases.vue";
 import Books from "../pages/Books.vue";
 import Shibas from "../pages/Shibas.vue";
@@ -49,6 +50,12 @@ export const routes = [
     name: "books",
     title: "Books",
     component: Books,
+  },
+  {
+    path: "/wallpapers",
+    name: "wallpapers",
+    title: "Wallpapers",
+    component: Wallpapers,
   },
   {
     path: "/:pathMatch(.*)*",
