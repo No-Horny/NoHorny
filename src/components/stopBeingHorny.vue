@@ -32,10 +32,7 @@
       <img src="https://i.redd.it/s4tsrma5gsd61.jpg" alt="be happy image" />
       <p>Be happy</p>
     </div>
-    <div
-      @click="1 + 1 !== 2 ? $router.push('/wallpapers') : notWorking()"
-      class="disabled"
-    >
+    <div @click="$router.push('/wallpapers')">
       <img
         src="https://i.pinimg.com/474x/ab/68/1c/ab681c415bd1c263de0d8b3404e9d4d2.jpg"
         alt="wallpaper image"
