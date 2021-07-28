@@ -29,10 +29,10 @@ export default defineComponent({
       var phrase = await this.getPhrase()
 
       const dialog = await Swal.fire({
-        html: `<h3>${phrase.phrase}</h3><p><em>${phrase.author}</em></p>`,
+        html: `<h4>“${phrase.phrase}”</h4><small><em>~ ${phrase.author}</em></small>`,
         confirmButtonText: `I'm better`,
         showDenyButton: true,
-        denyButtonText: `I'm need more phrases`,
+        denyButtonText: `I need more phrases`,
       })
 
       if(dialog.isDenied) {
