@@ -48,7 +48,7 @@
     </a>
   </li>
 </ul>
-<h3>ToDo</h3>
-
-- [x] Integrate the API to website
-- [ ] Create Memes and Wallpapers, page design
+<h3>ToDo beta</h3>
+- [ ] respiration guide, on panic button
+- [ ] add cats and memes on happy page
+- [ ] ...

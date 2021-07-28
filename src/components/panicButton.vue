@@ -1,5 +1,5 @@
 <template>
-  <button @click="respiration">
+  <button @click="randomPhrase">
     <icon icon="ant-design:alert-twotone" />
     Panic button
   </button>
@@ -7,6 +7,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import axios from 'axios'
 import { Icon } from "@iconify/vue/dist/iconify";
 import Swal from "sweetalert2";
 import "sweetalert2/src/sweetalert2.scss";
@@ -17,29 +18,26 @@ export default defineComponent({
     Icon,
   },
   methods: {
-    async respiration() {
-      Swal.fire({
-        title: "Not working yet!",
-      });
+    async getPhrase() {
+      const res = await axios.get('https://api.nohorny.ga/phrases')
 
-      // const firstStep = await Swal.fire({
-      //   title: "Let's try to calm down with guided breathing.",
-      //   icon: 'info',
-      //   showCloseButton: true,
-      //   showCancelButton: true,
-      //   focusConfirm: false,
-      //   confirmButtonText:
-      //     "Start",
-      //   confirmButtonAriaLabel: 'Start',
-      // })
+      const max = res.data.phrases.length
 
-      // firstStep.isConfirmed && await Swal.fire({
-      //   title: 'Inhale for 4 seconds, hold for 4, and exhale for 6 seconds.',
-      //   html: `
+      return res.data.phrases[(Math.random() * max) | 0]
+    },
+    async randomPhrase() {
+      var phrase = await this.getPhrase()
 
-      //   `,
-      //   confirmButtonText: 'Next',
-      // })
+      const dialog = await Swal.fire({
+        html: `<h4>“${phrase.phrase}”</h4><small><em>~ ${phrase.author}</em></small>`,
+        confirmButtonText: `I'm better`,
+        showDenyButton: true,
+        denyButtonText: `I need more phrases`,
+      })
+
+      if(dialog.isDenied) {
+        this.$router.push('/phrases')
+      }
     },
   },
   setup() {},
