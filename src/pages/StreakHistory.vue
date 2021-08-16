@@ -9,8 +9,8 @@
       <h2>Other Streaks</h2>
       <div class="old-streaks">
         <old-streak-timer
-          v-for="(streak, index) in streaks"
-          :key="index"
+          v-for="(streak, key) in streaks"
+          :key="key.toString()"
           :startedTime="streak.startedAt"
           :endedTime="streak.endedAt"
           streaklabel="old streak"
