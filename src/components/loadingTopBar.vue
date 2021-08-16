@@ -19,7 +19,7 @@ export default defineComponent({
 <style lang="scss" scoped>
 .loading-bar {
   position: fixed;
-  top: 76px;
+  top: 76 + 16px;
   width: 100%;
   display: flex;
   align-items: center;

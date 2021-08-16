@@ -1,93 +1,58 @@
 <template>
   <div class="container">
-    <div @click="$router.push('/meditation')">
-      <img
-        src="https://img.freepik.com/free-vector/man-meditating-concept_23-2148508453.jpg?size=338&ext=jpg"
-        alt="meditation image"
-      />
-      <p>Meditation</p>
-    </div>
-    <div @click="$router.push('/phrases')">
-      <img
-        src="https://images-na.ssl-images-amazon.com/images/I/619UY2ljb0L.jpg"
-        alt="phrase image"
-      />
-      <p>Phrases</p>
-    </div>
-    <div @click="$router.push('/communities')">
-      <img
-        src="https://img.freepik.com/free-vector/teamwork-people-with-puzzle-pieces_24877-54950.jpg?size=338&ext=jpg"
-        alt="communitie image"
-      />
-      <p>Communities</p>
-    </div>
-    <div @click="$router.push('/books')">
-      <img
-        src="https://image.freepik.com/free-vector/man-reading-book-while-walking-city_74855-7608.jpg"
-        alt="books image"
-      />
-      <p>Books</p>
-    </div>
-    <div @click="$router.push('/happy')">
-      <img src="https://i.redd.it/s4tsrma5gsd61.jpg" alt="be happy image" />
-      <p>Be happy</p>
-    </div>
-    <div @click="$router.push('/wallpapers')">
-      <img
-        src="https://i.pinimg.com/474x/ab/68/1c/ab681c415bd1c263de0d8b3404e9d4d2.jpg"
-        alt="wallpaper image"
-      />
-      <p>Wallpapers</p>
-    </div>
+    <h2>Stop being horny</h2>
+    <rounded-action-button @click="howToGetAGoodStart"
+      >How to get a good start with NoFap?</rounded-action-button
+    >
+    <rounded-action-button @click="learnHowToControl" color="#29D9FF"
+      >Learn how to control your Desires</rounded-action-button
+    >
+    <rounded-action-button @click="reasonsWhy" color="#2998FF"
+      >Reasons Why You Should Start NoFap</rounded-action-button
+    >
+    <rounded-action-button @click="whyIsItSoHardToDoNoFap" color="#A129FF"
+      >Why is it so hard to do NoFap?</rounded-action-button
+    >
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import Swal from "sweetalert2";
-import "sweetalert2/src/sweetalert2.scss";
+import RoundedActionButton from "./roundedActionButton.vue";
 
 export default defineComponent({
   name: "StopBeingHorny",
+  components: {
+    RoundedActionButton,
+  },
   methods: {
-    notWorking() {
-      Swal.fire({
-        title: "Not working yet!",
-      });
+    howToGetAGoodStart() {
+      window.location.href = "https://www.youtube.com/watch?v=xpCq0Bv2BAI";
+    },
+    learnHowToControl() {
+      window.location.href =
+        "https://medium.com/mind-cafe/how-to-control-your-desires-and-live-a-life-of-self-control-17b7722b4877";
+    },
+    reasonsWhy() {
+      window.location.href =
+        "https://mrmindblowing.com/25-crazy-benefits-of-nofap-the-superpowers-of-nofap/";
+    },
+    whyIsItSoHardToDoNoFap() {
+      window.location.href = "https://www.youtube.com/watch?v=pXIjRdzRDXE";
     },
   },
-  setup() {},
 });
 </script>
 
 <style lang="scss" scoped>
 .container {
+  margin-top: 16px;
+  width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  margin: 32px;
-  gap: 8px;
-  > div {
-    cursor: pointer;
-    transition: filter 0.2s;
-    &.disabled {
-      cursor: not-allowed;
-      filter: brightness(0.5) !important;
-    }
-    &:hover {
-      filter: brightness(0.8);
-    }
-  }
-  @media screen and (max-width: 550px) {
-  }
-}
-img {
-  width: 96px;
-  height: 96px;
-  object-fit: cover;
-  border-radius: 50%;
-  @media screen and (max-width: 360px) {
-    width: 81px;
-    height: 81px;
+  place-items: center;
+  gap: 12px;
+  h2 {
+    margin-bottom: 8px;
   }
 }
 </style>

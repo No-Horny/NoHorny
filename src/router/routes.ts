@@ -7,6 +7,7 @@ import Wallpapers from "../pages/Wallpapers.vue";
 import Phrases from "../pages/Phrases.vue";
 import Books from "../pages/Books.vue";
 import Shibas from "../pages/Shibas.vue";
+import Diary from "../pages/Diary.vue";
 import StreakHistory from '../pages/StreakHistory.vue';
 
 type Route = {
@@ -28,6 +29,12 @@ export const routes: Route[] = [
     name: "happy",
     title: "Happy",
     component: Happy,
+  },
+  {
+    path: "/diary",
+    name: "diary",
+    title: "Diary",
+    component: Diary,
   },
   {
     path: "/happy/shibas",

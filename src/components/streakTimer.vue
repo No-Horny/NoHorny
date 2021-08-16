@@ -6,10 +6,10 @@
     <h2>{{ timer }}</h2>
     <h3>Days, Hours, Minutes and Seconds.</h3>
     <div v-if="showActionButtons">
-      <button @click="$router.push('/streak-history')">
+      <!-- <button @click="$router.push('/streak-history')">
         <icon icon="fluent:text-bullet-list-ltr-20-filled" />
         STREAK HISTORY
-      </button>
+      </button> -->
       <button @click="resetProgressTimer">
         <icon icon="mdi:reload" />
         RELAPSE STREAK
@@ -138,7 +138,7 @@ export default defineComponent({
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     margin-top: 8px;
     button {
       display: flex;
@@ -148,6 +148,10 @@ export default defineComponent({
       padding: 6px 8px;
       border: 0;
       border-radius: 6px;
+      transition: filter .2s;
+      &:hover {
+        filter: brightness(0.8);
+      }
     }
   }
 }

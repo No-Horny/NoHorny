@@ -52,11 +52,13 @@
 
 - [ ] Apply new styles
   - [x] To streak timer
-  - [ ] Stop being horny
-  - [ ] Panic button
+  - [x] Stop being horny
+  - [x] Panic button
   - [ ] Dialogs
   - [ ] Settings
 - [x] Create streak history
+- [ ] Create diary
+  - [x] Styles
 - [ ] respiration guide, on panic button
 - [ ] add cats and memes on happy page
 - [ ] ...
