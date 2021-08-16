@@ -51,7 +51,12 @@
 <h3>ToDo beta</h3>
 
 - [ ] Apply new styles
-- [ ] Create streak history
+  - [x] To streak timer
+  - [ ] Stop being horny
+  - [ ] Panic button
+  - [ ] Dialogs
+  - [ ] Settings
+- [x] Create streak history
 - [ ] respiration guide, on panic button
 - [ ] add cats and memes on happy page
 - [ ] ...
