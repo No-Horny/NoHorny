@@ -1,6 +1,13 @@
 <template>
+  <div v-if="1 + 1 === 2" class="beta-warn">
+    <strong style="font-weight: 500">You are on the beta test website!</strong>
+  </div>
   <nav>
     <h1 class="logo">No Horny</h1>
+
+    <a class="settings-button" href="#" v-if="$route.name === 'home'">
+      <icon icon="ci:settings-filled" />
+    </a>
 
     <a @click="$router.go(-1)" v-if="$route.name !== 'home'">
       <icon icon="ion:chevron-back-outline" />
@@ -31,31 +38,37 @@ nav {
   padding: 16px;
   height: 60px;
   background: vars.$navbar_primary;
-  box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.25);
-  border-radius: 0px 0px 10px 10px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.25);
+  border-radius: 0px 0px 6px 6px;
   margin-bottom: 32px;
+  color: #24242d;
+}
+.beta-warn {
+  width: 100%;
+  padding: 4px;
+  display: grid;
+  place-items: center;
+  background: rgb(255, 199, 45);
 }
 .logo {
-  font-family: "Port Lligat Sans", sans-serif;
+  font-family: "Fredoka One", cursive;
   display: flex;
   align-items: center;
   text-align: center;
-  font-size: 2rem;
+  font-size: 24px;
   color: #1a1818;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;
 }
 a {
-  color: #000;
+  color: #24242d;
   display: grid;
   place-items: center;
-  font-size: 32px;
+  font-size: 24px;
   margin-left: auto;
   svg {
-    width: 32px;
-    height: 32px;
-    color: #000;
-    fill: #000;
+    width: 24px;
+    height: 24px;
+    color: #24242d;
+    fill: #24242d;
   }
 }
 </style>

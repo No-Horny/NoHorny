@@ -49,6 +49,9 @@
   </li>
 </ul>
 <h3>ToDo beta</h3>
+
+- [ ] Apply new styles
+- [ ] Create streak history
 - [ ] respiration guide, on panic button
 - [ ] add cats and memes on happy page
 - [ ] ...

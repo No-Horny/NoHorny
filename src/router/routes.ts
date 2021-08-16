@@ -7,8 +7,16 @@ import Wallpapers from "../pages/Wallpapers.vue";
 import Phrases from "../pages/Phrases.vue";
 import Books from "../pages/Books.vue";
 import Shibas from "../pages/Shibas.vue";
+import StreakHistory from '../pages/StreakHistory.vue';
 
-export const routes = [
+type Route = {
+  path: string;
+  name: string;
+  title?: string;
+  component: any;
+}
+
+export const routes: Route[] = [
   {
     path: "/",
     name: "home",
@@ -32,6 +40,12 @@ export const routes = [
     name: "meditation",
     title: "Meditation",
     component: Meditation,
+  },
+  {
+    path: '/streak-history',
+    name: 'streak-history',
+    title: 'Streak History',
+    component: StreakHistory,
   },
   {
     path: "/communities",
