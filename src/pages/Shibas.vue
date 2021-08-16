@@ -39,7 +39,7 @@ export default defineComponent({
   methods: {
     async FetchData() {
       try {
-        const res = await axios.get("https://happy.api.nohorny.ga/shiba/all");
+        const res = await axios.get("https://happy-api-nohorny.vercel.app/shiba/all");
         res.data.images.map((image: any) => {
           this.images.push(image.url);
         });
