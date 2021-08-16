@@ -44,19 +44,26 @@ export default defineComponent({
     return {
       timer: "Loading...",
       startTime: new Date(
-        localStorage.getItem("startTime") || this.resetStartTime()
+        localStorage.getItem("startTime") || this.createTimer()
       ),
     };
   },
   methods: {
+    createTimer() {
+      this.startTime = new Date();
+      localStorage.setItem("startTime", `${this.startTime}`);
+      return this.startTime;
+    },
     resetStartTime() {
-      const streakHistory = JSON.parse(localStorage.getItem('streakHistory') || '[]')
+      const streakHistory = JSON.parse(
+        localStorage.getItem("streakHistory") || "[]"
+      );
       streakHistory.push({
         startedAt: this.startTime,
         endedAt: new Date(),
-      })
+      });
 
-      localStorage.setItem('streakHistory', JSON.stringify(streakHistory));
+      localStorage.setItem("streakHistory", JSON.stringify(streakHistory));
 
       this.startTime = new Date();
       localStorage.setItem("startTime", `${this.startTime}`);
