@@ -45,12 +45,11 @@ export default defineComponent({
   font-family: Helvetica, Arial, sans-serif;
   header {
     display: flex;
-    align-items: center;
-    justify-content: center;
     text-align: start;
     padding: 16px;
     background: #ddd;
     border-radius: 6px 6px 0 0;
+    width: 100%;
   }
   .modal-body {
     display: flex;

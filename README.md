@@ -54,11 +54,23 @@
   - [x] To streak timer
   - [x] Stop being horny
   - [x] Panic button
-  - [ ] Dialogs
+  - [x] Modal
+  - [x] Dialogs
   - [ ] Settings
+  - [ ] ...
 - [x] Create streak history
 - [ ] Create diary
   - [x] Styles
-- [ ] respiration guide, on panic button
-- [ ] add cats and memes on happy page
+  - [ ] Create records
+  - [ ] Edit records
+  - [ ] Delete records
+  - [ ] Save all records on localstorage
+  - [ ] ...
+- [ ] create respiration guided on panic button
+- [ ] remove all dynamic pages
+- [ ] ...
+
+<h3>Future plans</h3>
+
+- [ ] Firebase integration to cross plataform
 - [ ] ...
