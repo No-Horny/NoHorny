@@ -50,13 +50,12 @@
 </ul>
 <h3>ToDo beta</h3>
 
-- [ ] Apply new styles
+- [x] Apply new styles
   - [x] To streak timer
   - [x] Stop being horny
   - [x] Panic button
   - [x] Modal
   - [x] Dialogs
-  - [ ] Settings
   - [ ] ...
 - [x] Create streak history
 - [ ] Create diary
