@@ -10,24 +10,41 @@
         <icon icon="fluent:text-bullet-list-ltr-20-filled" />
         STREAK HISTORY
       </button> -->
-      <button @click="resetProgressTimer">
+      <button @click="showRelapseDialogModal = true">
         <icon icon="mdi:reload" />
         RELAPSE STREAK
       </button>
     </div>
   </div>
+
+  <modal v-if="showRelapseDialogModal" @close="showRelapseDialogModal = false">
+    <header><h3>Relapse</h3></header>
+    <div class="modal-body">Do you really want to relapse?</div>
+    <footer>
+      <button @click="resetStartTime">Relapse</button>
+      <button @click="showRelapseDialogModal = false" class="close">Cancel</button>
+    </footer>
+  </modal>
+
+  <modal v-if="showAfterRalapseDialogModal" @close="showAfterRalapseDialogModal = false">
+    <header><h3>Your streak is reseted!</h3></header>
+    <div class="modal-body">Try return more stronger!</div>
+    <footer>
+      <button @click="showAfterRalapseDialogModal = false" class="close">Ok</button>
+    </footer>
+  </modal>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
 import { Icon } from "@iconify/vue";
-import Swal from "sweetalert2";
-import "sweetalert2/src/sweetalert2.scss";
+import Modal from './appModal.vue';
 
 export default defineComponent({
   name: "StreakTimer",
   components: {
     Icon,
+    Modal,
   },
   props: {
     streaklabel: {
@@ -46,6 +63,8 @@ export default defineComponent({
       startTime: new Date(
         localStorage.getItem("startTime") || this.createTimer()
       ),
+      showRelapseDialogModal: false,
+      showAfterRalapseDialogModal: false,
     };
   },
   methods: {
@@ -67,30 +86,12 @@ export default defineComponent({
 
       this.startTime = new Date();
       localStorage.setItem("startTime", `${this.startTime}`);
+      this.showRelapseDialogModal = false
+      this.showAfterRalapseDialogModal = true
       return this.startTime;
-    },
-    resetProgressTimer() {
-      Swal.fire({
-        title: "Do you really want to reset the progress timer?",
-        text: "You won't be able to revert this!",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#3085d6",
-        cancelButtonColor: "#d33",
-        confirmButtonText: "Yes, reset it!",
-      }).then((result) => {
-        if (result.isConfirmed) {
-          this.resetStartTime();
-          Swal.fire({
-            title: "Good luck buddy, and try to come back stronger!",
-            text: "Your progress timer has been reset!",
-            icon: "success",
-          });
-        }
-      });
-    },
+    }
   },
-  created() {
+  mounted() {
     window.setInterval(() => {
       var secsDiff = new Date().getTime() - this.startTime.getTime();
       var days = Math.floor(secsDiff / (1000 * 60 * 60 * 24));
@@ -148,7 +149,7 @@ export default defineComponent({
       padding: 6px 8px;
       border: 0;
       border-radius: 6px;
-      transition: filter .2s;
+      transition: filter 0.2s;
       &:hover {
         filter: brightness(0.8);
       }

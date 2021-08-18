@@ -13,7 +13,7 @@ export default defineComponent({
     color: {
       type: String,
       required: false,
-      default: "#8FFFA8",
+      default: "#A6FFB9",
     },
   },
 });

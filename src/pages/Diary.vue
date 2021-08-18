@@ -4,16 +4,28 @@
 
     <h3><strong>Not working yet!</strong></h3>
 
+    <button @click="showModal = true">Show Modal</button>
+
+    <modal v-if="showModal" @close="showModal = false">
+      <header><h3>Do you really want to delete this item?</h3></header>
+      <div class="modal-body">You won't be able to revert this!</div>
+      <footer>
+        <button @click="showModal = false">Cancel</button>
+        <button @click="showModal = false" class="close">Delete</button>
+      </footer>
+    </modal>
+
     <div class="records">
       <div class="record">
         <small>
           <strong>Record title</strong>
           0 days ago
         </small>
-        <textarea>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos reprehenderit blanditiis repellat similique harum magni magnam esse repellendus expedita, odit nulla iusto molestias praesentium eligendi amet. Aliquid sapiente quia molestiae quisquam vel! Repudiandae eveniet, iure eaque dolore quaerat labore nostrum dolorum, nemo quas autem molestias?</textarea
+        <textarea>
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos reprehenderit blanditiis repellat similique harum magni magnam esse repellendus expedita, odit nulla iusto molestias praesentium eligendi amet. Aliquid sapiente quia molestiae quisquam vel! Repudiandae eveniet, iure eaque dolore quaerat labore nostrum dolorum, nemo quas autem molestias?</textarea
         >
         <div class="controls">
-          <button update v-if="1+1 === 3">
+          <button update v-if="1 + 1 === 3">
             <icon icon="ant-design:save-outlined" />
             Save changes
           </button>
@@ -29,7 +41,8 @@
           <strong>Record title</strong>
           0 days ago
         </small>
-        <textarea>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos reprehenderit blanditiis repellat similique harum magni magnam esse repellendus expedita, odit nulla iusto molestias praesentium eligendi amet. Aliquid sapiente quia molestiae quisquam vel! Repudiandae eveniet, iure eaque dolore quaerat labore nostrum dolorum, nemo quas autem molestias?</textarea
+        <textarea>
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos reprehenderit blanditiis repellat similique harum magni magnam esse repellendus expedita, odit nulla iusto molestias praesentium eligendi amet. Aliquid sapiente quia molestiae quisquam vel! Repudiandae eveniet, iure eaque dolore quaerat labore nostrum dolorum, nemo quas autem molestias?</textarea
         >
         <div class="controls">
           <button update>
@@ -52,12 +65,19 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import Modal from "../components/appModal.vue";
 import { Icon } from "@iconify/vue";
 
 export default defineComponent({
   name: "Diary",
   components: {
     Icon,
+    Modal,
+  },
+  data() {
+    return {
+      showModal: false,
+    };
   },
 });
 </script>
@@ -141,10 +161,10 @@ strong {
           }
         }
         &[update] {
-          color: #FFC107;
+          color: #ffc107;
           > svg {
-            color: #FFC107;
-            fill: #FFC107;
+            color: #ffc107;
+            fill: #ffc107;
           }
         }
       }

@@ -4,11 +4,11 @@
       <icon icon="uil:diary" />
       NOFAP DIARY
     </rect-action-button>
-    <rect-action-button @click="$router.push('/streak-history')" color="#9382FF">
+    <rect-action-button @click="$router.push('/streak-history')" color="#A090FF">
       <icon icon="fluent:history-20-filled" />
       STREAK HISTORY
     </rect-action-button>
-    <rect-action-button color="#FAC234">
+    <rect-action-button color="#FFDD66">
       <icon icon="ant-design:alert-filled" />
       PANIC BUTTON
     </rect-action-button>

@@ -4,13 +4,13 @@
     <rounded-action-button @click="howToGetAGoodStart"
       >How to get a good start with NoFap?</rounded-action-button
     >
-    <rounded-action-button @click="learnHowToControl" color="#29D9FF"
+    <rounded-action-button @click="learnHowToControl" color="#85E9FF"
       >Learn how to control your Desires</rounded-action-button
     >
-    <rounded-action-button @click="reasonsWhy" color="#2998FF"
+    <rounded-action-button @click="reasonsWhy" color="#6DB9FF"
       >Reasons Why You Should Start NoFap</rounded-action-button
     >
-    <rounded-action-button @click="whyIsItSoHardToDoNoFap" color="#A129FF"
+    <rounded-action-button @click="whyIsItSoHardToDoNoFap" color="#BA64FF"
       >Why is it so hard to do NoFap?</rounded-action-button
     >
   </div>
