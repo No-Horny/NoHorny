@@ -30,13 +30,15 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+@import '../styles/variables.scss';
+
 .container {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   flex-wrap: wrap;
   gap: 8px;
-  width: min(360px, 100% - 32px);
+  width: $default_width;
   margin-top: 12px;
 }
 </style>

@@ -28,8 +28,10 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+@import '../styles/variables.scss';
+
 .phrase {
-  width: min(360px, 100% - 32px);
+  width: $default_width;
   background: rgba($color: #000000, $alpha: 0.2);
   text-align: start;
   padding: 16px;

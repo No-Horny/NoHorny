@@ -23,8 +23,10 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+@import '../styles/variables.scss';
+
 .items {
-  width: min(360px, 100% - 32px);
+  width: $default_width;
   gap: 16px;
   display: flex;
   flex-direction: column;

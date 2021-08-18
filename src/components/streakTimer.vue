@@ -17,7 +17,7 @@
     </div>
   </div>
 
-  <modal v-if="showRelapseDialogModal" @close="showRelapseDialogModal = false">
+  <modal :class="showRelapseDialogModal? 'open' : 'closed'" @close="showRelapseDialogModal = false">
     <header><h3>Relapse</h3></header>
     <div class="modal-body">Do you really want to relapse?</div>
     <footer>
@@ -30,7 +30,7 @@
     <header><h3>Your streak is reseted!</h3></header>
     <div class="modal-body">Try return more stronger!</div>
     <footer>
-      <button @click="showAfterRalapseDialogModal = false" class="close">Ok</button>
+      <button @click="showAfterRalapseDialogModal = false">Ok</button>
     </footer>
   </modal>
 </template>
@@ -112,8 +112,10 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+@import '../styles/variables.scss';
+
 .streak-card {
-  width: min(360px, 100% - 32px);
+  width: $default_width;
   background: #dedede;
   border-radius: 6px;
   filter: drop-shadow(0px 2px 6px rgba(0, 0, 0, 0.25));

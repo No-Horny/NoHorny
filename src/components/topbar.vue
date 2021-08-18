@@ -3,7 +3,7 @@
     <strong style="font-weight: 500">You are on the beta test website!</strong>
   </div>
   <nav>
-    <h1 class="logo">No Horny</h1>
+    <h1 class="logo" @click="$router.push('/')">No Horny</h1>
 
     <a class="settings-button" href="#" v-if="$route.name === 'home'">
       <icon icon="ci:settings-filled" />
@@ -56,6 +56,7 @@ nav {
   align-items: center;
   text-align: center;
   font-size: 24px;
+  cursor: pointer;
   color: #1a1818;
 }
 a {

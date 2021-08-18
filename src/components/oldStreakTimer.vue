@@ -55,8 +55,10 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+@import '../styles/variables.scss';
+
 .streak-card {
-  width: min(360px, 100% - 32px);
+  width: $default_width;
   background: #dedede;
   border-radius: 6px;
   filter: drop-shadow(0px 2px 6px rgba(0, 0, 0, 0.25));

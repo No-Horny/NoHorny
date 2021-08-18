@@ -20,11 +20,13 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+@import '../styles/variables.scss';
+
 .rounded-action-button {
   border: 0;
   border-radius: 9999px;
   padding: 12px;
-  width: min(360px, 100% - 32px);
+  width: $default_width;
   color: #24242d;
   font-size: 14px;
   transition: filter .2s;

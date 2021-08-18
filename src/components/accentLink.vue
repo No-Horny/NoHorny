@@ -50,11 +50,13 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+@import '../styles/variables.scss';
+
 a {
   display: flex;
   align-items: center;
   justify-content: start;
-  width: min(360px, 100% - 32px);
+  width: $default_width;
   text-align: start;
   padding: 16px;
   border-radius: 10px;

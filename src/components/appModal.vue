@@ -20,6 +20,8 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
+@import '../styles/variables.scss';
+
 .modal-mask {
   position: fixed;
   z-index: 9998;
@@ -27,16 +29,23 @@ export default defineComponent({
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.3);
   display: table;
-  transition: opacity 0.3s ease;
+  transition: all .2s;
+  &.closed {
+    z-index: -9998;
+    opacity: 0;
+  }
+  &.open {
+    opacity: 1;
+  }
 }
 .modal-wrapper {
   display: table-cell;
   vertical-align: middle;
 }
 .modal-container {
-  width: min(360px, 100% - 32px);
+  width: $default_width;
   margin: 0px auto;
   background-color: #fff;
   border-radius: 6px;

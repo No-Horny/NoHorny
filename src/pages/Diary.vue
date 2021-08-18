@@ -4,17 +4,6 @@
 
     <h3><strong>Not working yet!</strong></h3>
 
-    <button @click="showModal = true">Show Modal</button>
-
-    <modal v-if="showModal" @close="showModal = false">
-      <header><h3>Do you really want to delete this item?</h3></header>
-      <div class="modal-body">You won't be able to revert this!</div>
-      <footer>
-        <button @click="showModal = false">Cancel</button>
-        <button @click="showModal = false" class="close">Delete</button>
-      </footer>
-    </modal>
-
     <div class="records">
       <div class="record">
         <small>
@@ -57,9 +46,28 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos reprehenderit blan
       </div>
     </div>
 
-    <button class="add-new-note">
+    <button class="add-new-note" @click="showAddNewRecordModal = true">
       <icon icon="akar-icons:plus" />
     </button>
+
+    <modal
+      :class="showAddNewRecordModal ? 'open' : 'closed'"
+      @close="showAddNewRecordModal = false"
+    >
+      <header><h3>New diary record</h3></header>
+      <div class="modal-body">
+        <label for="title-input" class="osr">Record title</label>
+        <input type="text" placeholder="Record title" class="default-input" />
+        <label for="title-input" class="osr">Record description</label>
+        <textarea class="default-text-area" placeholder="Record description"></textarea>
+      </div>
+      <footer>
+        <button @click="showAddNewRecordModal = false" class="close">Cancel</button>
+        <button @click="showAddNewRecordModal = false" style="background: #4078c0; color: #fff">
+          Save
+        </button>
+      </footer>
+    </modal>
   </div>
 </template>
 
@@ -76,15 +84,36 @@ export default defineComponent({
   },
   data() {
     return {
-      showModal: false,
+      showAddNewRecordModal: false,
     };
   },
 });
 </script>
 
 <style lang="scss" scoped>
+@import "../styles/variables.scss";
+
 strong {
   font-weight: 500;
+}
+.modal-body {
+  gap: 8px;
+}
+.default-input {
+  width: 100%;
+  border: 0;
+  border-radius: 6px;
+  padding: 8px;
+  background: #ececec;
+}
+.default-text-area {
+  width: 100%;
+  min-height: 100px;
+  resize: vertical;
+  border: 0;
+  border-radius: 6px;
+  padding: 8px;
+  background: #ececec;
 }
 .records {
   width: 100%;
@@ -94,7 +123,7 @@ strong {
   justify-content: center;
   gap: 8px;
   .record {
-    width: min(360px, 100% - 32px);
+    width: $default_width;
     display: flex;
     flex-direction: column;
     align-items: center;

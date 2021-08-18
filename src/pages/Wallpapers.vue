@@ -65,12 +65,14 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+@import '../styles/variables.scss';
+
 .images {
   display: flex;
   flex-direction: column;
   gap: 16px;
   align-items: center;
-  width: min(360px, 100% - 32px);
+  width: $default_width;
   img {
     width: 100%;
     border-radius: 10px;
