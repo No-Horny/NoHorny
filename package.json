@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
-    "sweetalert2": "^11.0.18",
     "vue": "^3.0.5",
     "vue-router": "^4.0.10"
   },

@@ -20,7 +20,6 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@use '../styles/variables' as vars;
 button {
   width: 100%;
   padding: 8px 16px;

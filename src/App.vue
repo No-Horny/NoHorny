@@ -5,7 +5,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import TopBar from "./components/topbar.vue";
+import TopBar from "./shared/components/topbar.vue";
 
 export default defineComponent({
   name: "App",

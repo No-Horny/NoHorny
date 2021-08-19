@@ -20,7 +20,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
-@import '../styles/variables.scss';
+@import '../../styles/variables.scss';
 
 .modal-mask {
   position: fixed;

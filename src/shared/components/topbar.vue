@@ -29,7 +29,8 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@use "../styles/variables" as vars;
+@use "../../styles/variables" as vars;
+
 nav {
   width: 100%;
   display: flex;

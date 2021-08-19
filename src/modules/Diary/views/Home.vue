@@ -73,7 +73,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos reprehenderit blan
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import Modal from "../../../components/appModal.vue";
+import Modal from "../../../shared/components/appModal.vue";
 import { Icon } from "@iconify/vue";
 
 export default defineComponent({

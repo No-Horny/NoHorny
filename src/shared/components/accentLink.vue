@@ -50,7 +50,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import '../styles/variables.scss';
+@import '../../styles/variables.scss';
 
 a {
   display: flex;

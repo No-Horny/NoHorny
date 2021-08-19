@@ -42,22 +42,13 @@
       Progressive Web App
     </a>
   </li>
-  <li>
-    <a href="https://sweetalert2.github.io/">
-      Sweet Alert 2
-    </a>
-  </li>
 </ul>
 <h3>ToDo beta</h3>
 
 - [x] Apply new styles
-  - [x] To streak timer
-  - [x] Stop being horny
-  - [x] Panic button
-  - [x] Modal
-  - [x] Dialogs
-  - [ ] ...
 - [x] Create streak history
+- [x] remove all dynamic pages
+- [x] Apply Modular Architecture to project
 - [ ] Create diary
   - [x] Styles
   - [ ] Create records
@@ -66,14 +57,10 @@
   - [ ] Save all records on localstorage
   - [ ] ...
 - [ ] create respiration guided on panic button
-- [ ] remove all dynamic pages
-- [ ] Using Modular Architecture
-  - [x] Change all pages to a modular folder
-  - [ ] Create a self Module file and router for each page folder
-  - [ ] ...
 - [ ] ...
 
 <h3>Future plans</h3>
 
 - [ ] Firebase integration to cross plataform
+- [ ] Translations to pt-BR and en-US
 - [ ] ...
