@@ -21,8 +21,8 @@
     <header><h3>Relapse</h3></header>
     <div class="modal-body">Do you really want to relapse?</div>
     <footer>
-      <button @click="resetStartTime">Relapse</button>
       <button @click="showRelapseDialogModal = false" class="close">Cancel</button>
+      <button @click="resetStartTime" style="background: #4078c0; color: #fff">Relapse</button>
     </footer>
   </modal>
 
@@ -30,7 +30,7 @@
     <header><h3>Your streak is reseted!</h3></header>
     <div class="modal-body">Try return more stronger!</div>
     <footer>
-      <button @click="showAfterRalapseDialogModal = false">Ok</button>
+      <button @click="showAfterRalapseDialogModal = false" style="background: #4078c0; color: #fff">Ok</button>
     </footer>
   </modal>
 </template>

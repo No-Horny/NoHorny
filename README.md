@@ -49,18 +49,12 @@
 - [x] Create streak history
 - [x] remove all dynamic pages
 - [x] Apply Modular Architecture to project
-- [ ] Create diary
-  - [x] Styles
-  - [ ] Create records
-  - [ ] Edit records
-  - [ ] Delete records
-  - [ ] Save all records on localstorage
-  - [ ] ...
+- [x] Create diary
 - [ ] create respiration guided on panic button
+- [ ] translations
 - [ ] ...
 
 <h3>Future plans</h3>
 
 - [ ] Firebase integration to cross plataform
-- [ ] Translations to pt-BR and en-US
 - [ ] ...
