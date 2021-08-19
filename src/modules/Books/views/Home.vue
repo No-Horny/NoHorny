@@ -1,13 +1,18 @@
 <template>
   <loading-top-bar v-if="isLoading" />
   <div class="page" v-else>
-    <h2>Choose a wallpaper to motivate you every day</h2>
-    <div class="images">
-      <img
-        v-for="(image, key) in images"
+    <h2>Find a book to read</h2>
+    <div class="books">
+      <accent-link
+        v-for="(book, key) in books"
         :key="key"
-        :src="image"
-        alt="shiba dog image"
+        :title="book.title"
+        :description="book.author"
+        :imgUrl="book.image"
+        :imgAlt="book.title"
+        :price="book.price"
+        :to="book.url"
+        background="#3F454B"
       />
     </div>
   </div>
@@ -15,34 +20,35 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import axios from 'axios';
-import LoadingTopBar from "../components/loadingTopBar.vue";
+import axios from "axios";
+import LoadingTopBar from "../../../components/loadingTopBar.vue";
+import AccentLink from "../../../components/accentLink.vue";
 import Swal from "sweetalert2";
 import "sweetalert2/src/sweetalert2.scss";
 
 type DataTypes = {
-  images: string[];
+  books: any[];
   isLoading: boolean;
 };
 
 export default defineComponent({
-  name: "Wallpapers",
-  components: {
-    LoadingTopBar,
-  },
+  name: "Books",
   data(): DataTypes {
     return {
-      images: [],
-      isLoading: true
-    }
+      books: [],
+      isLoading: true,
+    };
+  },
+  components: {
+    AccentLink,
+    LoadingTopBar,
   },
   methods: {
     async FetchData() {
       try {
-        const res = await axios.get("https://api.nohorny.ga/wallpapers");
-        res.data.wallpapers.map((image: any) => {
-          this.images.push(image.wallpaper);
-        });
+        const res = await axios.get("https://api.nohorny.ga/books");
+
+        this.books = res.data.books;
       } catch (err) {
         Swal.fire({
           icon: "error",
@@ -55,27 +61,22 @@ export default defineComponent({
           }
         });
       }
-    }
+    },
   },
   async created() {
-    await this.FetchData()
-    this.isLoading = false
-  }
+    await this.FetchData();
+    this.isLoading = false;
+  },
+  setup() {},
 });
 </script>
 
 <style lang="scss" scoped>
-@import '../styles/variables.scss';
-
-.images {
+.books {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 16px;
   align-items: center;
-  width: $default_width;
-  img {
-    width: 100%;
-    border-radius: 10px;
-  }
+  gap: 8px;
 }
 </style>

@@ -16,7 +16,7 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import axios from "axios";
-import LoadingTopBar from "../components/loadingTopBar.vue";
+import LoadingTopBar from "../../../components/loadingTopBar.vue";
 import PhraseComponent from "../components/phraseComponent.vue";
 import Swal from "sweetalert2";
 import "sweetalert2/src/sweetalert2.scss";

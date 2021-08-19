@@ -46,7 +46,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import AccentLink from "../components/accentLink.vue";
+import AccentLink from "../../../components/accentLink.vue";
 
 export default defineComponent({
   name: "Meditation",

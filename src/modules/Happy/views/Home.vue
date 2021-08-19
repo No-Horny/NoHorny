@@ -11,7 +11,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import AccentButton from "../components/accentButton.vue";
+import AccentButton from "../../../components/accentButton.vue";
 
 export default defineComponent({
   name: "Happy",
@@ -23,7 +23,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import '../styles/variables.scss';
+@import "../../../styles/variables.scss";
 
 .items {
   width: $default_width;

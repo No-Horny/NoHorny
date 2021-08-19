@@ -67,6 +67,10 @@
   - [ ] ...
 - [ ] create respiration guided on panic button
 - [ ] remove all dynamic pages
+- [ ] Using Modular Architecture
+  - [x] Change all pages to a modular folder
+  - [ ] Create a self Module file and router for each page folder
+  - [ ] ...
 - [ ] ...
 
 <h3>Future plans</h3>

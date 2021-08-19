@@ -1,14 +1,14 @@
-import Home from "../pages/Home.vue";
-import Page404 from "../pages/404.vue";
-import Happy from "../pages/Happy.vue";
-import Meditation from "../pages/Meditation.vue";
-import Communities from "../pages/Communities.vue";
-import Wallpapers from "../pages/Wallpapers.vue";
-import Phrases from "../pages/Phrases.vue";
-import Books from "../pages/Books.vue";
-import Shibas from "../pages/Shibas.vue";
-import Diary from "../pages/Diary.vue";
-import StreakHistory from '../pages/StreakHistory.vue';
+import Home from "../modules/Home/views/Home.vue";
+import Page404 from "../modules/404/views/Home.vue";
+import Meditation from "../modules/Meditation/views/Home.vue";
+import Communities from "../modules/Communities/views/Home.vue";
+import Wallpapers from "../modules/Wallpapers/views/Home.vue";
+import Phrases from "../modules/Phrases/views/Home.vue";
+import Books from "../modules/Books/views/Home.vue";
+import Diary from "../modules/Diary/views/Home.vue";
+import StreakHistory from '../modules/StreakHistory/views/Home.vue';
+import Happy from "../modules/Happy/views/Home.vue";
+import Shibas from "../modules/Happy/views/Shibas.vue";
 
 type Route = {
   path: string;
@@ -25,22 +25,22 @@ export const routes: Route[] = [
     component: Home,
   },
   {
-    path: "/happy",
-    name: "happy",
-    title: "Happy",
-    component: Happy,
+    path: '/happy',
+    name: 'happy',
+    title: 'Happy',
+    component: Happy
+  },
+  {
+    path: '/shibas',
+    name: 'shibas',
+    title: 'Shibas',
+    component: Shibas
   },
   {
     path: "/diary",
     name: "diary",
     title: "Diary",
     component: Diary,
-  },
-  {
-    path: "/happy/shibas",
-    name: "shibas",
-    title: "Shibas",
-    component: Shibas,
   },
   {
     path: "/meditation",

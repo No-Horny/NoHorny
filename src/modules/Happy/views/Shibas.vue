@@ -15,7 +15,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import LoadingTopBar from "../components/loadingTopBar.vue";
+import LoadingTopBar from "../../../components/loadingTopBar.vue";
 import axios from "axios";
 import Swal from "sweetalert2";
 import "sweetalert2/src/sweetalert2.scss";
@@ -67,7 +67,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import "../styles/variables.scss";
+@import "../../../styles/variables.scss";
 
 .images {
   display: flex;

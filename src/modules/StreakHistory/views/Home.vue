@@ -23,7 +23,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import StreakTimer from "../components/streakTimer.vue";
+import StreakTimer from "../../../components/streakTimer.vue";
 import OldStreakTimer from "../components/oldStreakTimer.vue";
 
 export default defineComponent({

@@ -18,7 +18,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import RoundedActionButton from "./roundedActionButton.vue";
+import RoundedActionButton from "../../../components/roundedActionButton.vue";
 
 export default defineComponent({
   name: "StopBeingHorny",

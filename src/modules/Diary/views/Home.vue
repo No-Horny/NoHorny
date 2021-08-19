@@ -73,7 +73,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos reprehenderit blan
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import Modal from "../components/appModal.vue";
+import Modal from "../../../components/appModal.vue";
 import { Icon } from "@iconify/vue";
 
 export default defineComponent({
@@ -91,7 +91,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import "../styles/variables.scss";
+@import "../../../styles/variables.scss";
 
 strong {
   font-weight: 500;
