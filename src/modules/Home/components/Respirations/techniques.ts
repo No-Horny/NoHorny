@@ -9,7 +9,7 @@ export const techniques: IRespirationTechnique[] = [
     name: "Deep Breathing",
     description: "",
     // breath in, hold, breath out and rest
-    steps: [4, 4, 6, 2],
+    steps: [4, 4, 6, 0],
   },
   {
     name: "Continuous Breathing",
