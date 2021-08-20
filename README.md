@@ -47,16 +47,10 @@
 
 - [x] Apply new styles
 - [x] Create streak history
-- [x] remove all dynamic pages
+- [x] Remove all dynamic pages
 - [x] Apply Modular Architecture to project
 - [x] Create diary
-- [ ] create respiration guided on panic button
-  - [x] styles v1
-  - [x] respiration logic
-  - [x] respiration animations
-  - [ ] choose a respiration
-- [ ] translations
-- [ ] ...
+- [x] Respiration guided v1
 
 <h3>Future plans</h3>
 
