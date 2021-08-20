@@ -36,7 +36,7 @@ export default defineComponent({
     Modal,
     RespirationModal,
   },
-  data(): any {
+  data() {
     return {
       techniques,
       showRespirationTechniqueModal1: false,
