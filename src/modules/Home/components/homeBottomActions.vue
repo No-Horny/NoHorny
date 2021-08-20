@@ -4,29 +4,44 @@
       <icon icon="uil:diary" />
       NOFAP DIARY
     </rect-action-button>
-    <rect-action-button @click="$router.push('/streak-history')" color="#A090FF">
+    <rect-action-button
+      @click="$router.push('/streak-history')"
+      color="#A090FF"
+    >
       <icon icon="fluent:history-20-filled" />
       STREAK HISTORY
     </rect-action-button>
-    <rect-action-button color="#FFDD66">
+    <rect-action-button color="#FFDD66" @click="showRespirationModal = true">
       <icon icon="ant-design:alert-filled" />
       PANIC BUTTON
     </rect-action-button>
+    <respiration-modal
+      :respirationTechniqueIndex="0"
+      :showRespirationModal="showRespirationModal"
+      @close="showRespirationModal = false"
+    />
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent } from "vue";
 import RectActionButton from "./rectActionButton.vue";
+import RespirationModal from "./Respirations/respirationModal.vue";
 import { Icon } from "@iconify/vue";
 
 export default defineComponent({
-  name: 'HomeBottomActions',
+  name: "HomeBottomActions",
   components: {
     RectActionButton,
     Icon,
+    RespirationModal,
   },
-})
+  data() {
+    return {
+      showRespirationModal: false,
+    };
+  },
+});
 </script>
 
 <style lang="scss" scoped>

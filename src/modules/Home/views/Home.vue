@@ -9,8 +9,9 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import StopBeingHorny from "../components/stopBeingHorny.vue";
-import HomeBottomActions from '../components/homeBottomActions.vue';
-import StreakTimer from '../../../shared/components/streakTimer.vue'
+import HomeBottomActions from "../components/homeBottomActions.vue";
+import StreakTimer from "../../../shared/components/streakTimer.vue";
+import { techniques } from "../components/Respirations/techniques";
 
 export default defineComponent({
   name: "Home",
@@ -18,6 +19,11 @@ export default defineComponent({
     StopBeingHorny,
     StreakTimer,
     HomeBottomActions,
+  },
+  data() {
+    return {
+      techniques,
+    };
   },
   setup() {},
 });

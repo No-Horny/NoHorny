@@ -51,6 +51,10 @@
 - [x] Apply Modular Architecture to project
 - [x] Create diary
 - [ ] create respiration guided on panic button
+  - [x] styles v1
+  - [x] respiration logic
+  - [x] respiration animations
+  - [ ] choose a respiration
 - [ ] translations
 - [ ] ...
 
