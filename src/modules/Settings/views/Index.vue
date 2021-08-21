@@ -3,9 +3,9 @@
     <nav>
       <h2>Settings</h2>
 
-      <a @click="$router.go(-1)" v-if="$route.name !== 'home'">
+      <button @click="$router.go(-1)" v-if="$route.name !== 'home'">
         <icon icon="ion:chevron-back-outline" />
-      </a>
+      </button>
     </nav>
 
     <div class="page-body">
@@ -91,10 +91,13 @@ nav {
   align-items: center;
   justify-content: space-between;
   margin: 16px 0;
-  a {
+  button {
     display: grid;
     place-items: center;
     color: #24242d;
+    padding: 8px;
+    border: 0;
+    background: transparent;
     svg {
       width: 28px;
       height: 28px;

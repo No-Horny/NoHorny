@@ -10,7 +10,7 @@
     <rounded-action-button @click="reasonsWhy" color="#6DB9FF"
       >Reasons Why You Should Start NoFap</rounded-action-button
     >
-    <rounded-action-button @click="whyIsItSoHardToDoNoFap" color="#BA64FF"
+    <rounded-action-button @click="whyIsItSoHardToDoNoFap" color="#7c64ff"
       >Why is it so hard to do NoFap?</rounded-action-button
     >
   </div>

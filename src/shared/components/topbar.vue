@@ -7,7 +7,6 @@
 
     <a
       class="settings-button"
-      href="#"
       v-if="$route.name === 'home'"
       @click="$router.push('/settings')"
     >
