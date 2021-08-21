@@ -51,8 +51,25 @@
 - [x] Apply Modular Architecture to project
 - [x] Create diary
 - [x] Respiration guided v1
+- [ ] Create settings page
+- [ ] Improve some styles
+- [ ] Dark theme
+- [ ] More respiration techniques
+- [ ] More options, than respiration on panic button
+  - [ ] Motivational phrases
+  - [ ] Free self improvement books
+  - [ ] ...
+- [ ] Translation
+  - [ ] pt-BR
+
+<h3>ToDo before realease v2</h3>
+
+- [ ] Change App Icons
+- [ ] Change Website host from vercel to netlify
+- [ ] Remove beta warn
 
 <h3>Future plans</h3>
 
 - [ ] Firebase integration to cross plataform
+- [ ] Translation to other languages than english and portuguese
 - [ ] ...

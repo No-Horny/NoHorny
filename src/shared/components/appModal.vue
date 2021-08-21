@@ -3,8 +3,7 @@
     <div class="modal-mask">
       <div class="modal-wrapper" @click.self="$emit('close')">
         <div class="modal-container">
-          <slot>
-          </slot>
+          <slot> </slot>
         </div>
       </div>
     </div>
@@ -20,7 +19,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
-@import '../../styles/variables.scss';
+@import "../../styles/variables.scss";
 
 .modal-mask {
   position: fixed;
@@ -31,7 +30,7 @@ export default defineComponent({
   height: 100%;
   background-color: rgba(0, 0, 0, 0.3);
   display: table;
-  transition: all .2s;
+  transition: all 0.2s;
   &.closed {
     z-index: -9998;
     opacity: 0;
@@ -59,6 +58,9 @@ export default defineComponent({
     background: #ddd;
     border-radius: 6px 6px 0 0;
     width: 100%;
+    h3 {
+      font-weight: 500;
+    }
   }
   .modal-body {
     display: flex;
@@ -73,13 +75,20 @@ export default defineComponent({
     align-items: center;
     justify-content: center;
     gap: 8px;
-    button {
+    button,
+    .button {
+      text-align: center;
       padding: 6px 8px;
       width: 50%;
       background: #ddd;
+      color: #24242d;
       border: 0;
       border-radius: 6px;
-      transition: filter .2s;
+      transition: filter 0.2s;
+      font-size: 13px;
+      font-weight: 500;
+      text-decoration: none;
+      box-shadow: 0px 2px 6px rgb(0 0 0 / 25%);
       &.close {
         background: tomato;
         color: #fff;

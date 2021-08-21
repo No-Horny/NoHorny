@@ -1,7 +1,10 @@
 <template>
   <div class="page">
-
-    <strong v-if="records.length <= 0"><h3>You don't have records, yet!</h3> <br/> Add one clicking on the add button.</strong>
+    <strong v-if="records.length <= 0"
+      ><h3>You don't have records, yet!</h3>
+      <br />
+      Add one clicking on the add button.</strong
+    >
 
     <div class="records" v-if="showRecords">
       <diary-record
@@ -50,7 +53,7 @@ export default defineComponent({
       const records = JSON.parse(localStorage.getItem("diary-recods") || "[]");
       this.records = records;
 
-      // (GAMBIARRA) Re-render the component 
+      // (GAMBIARRA) Re-render the component
       this.showRecords = false;
       this.$nextTick(() => {
         this.showRecords = true;
@@ -69,7 +72,8 @@ export default defineComponent({
 .page {
   margin-bottom: 75px;
 }
-strong, h3 {
+strong,
+h3 {
   font-weight: 500;
 }
 .records {

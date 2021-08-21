@@ -1,11 +1,16 @@
 <template>
-  <div v-if="1 + 1 === 2" class="beta-warn">
+  <div v-if="1 + 1 === 3" class="beta-warn">
     <strong style="font-weight: 500">You are on the beta test website!</strong>
   </div>
-  <nav>
+  <nav v-if="$route.name !== 'settings'">
     <h1 class="logo" @click="$router.push('/')">No Horny</h1>
 
-    <a class="settings-button" href="#" v-if="$route.name === 'home'">
+    <a
+      class="settings-button"
+      href="#"
+      v-if="$route.name === 'home'"
+      @click="$router.push('/settings')"
+    >
       <icon icon="ci:settings-filled" />
     </a>
 
@@ -67,8 +72,8 @@ a {
   font-size: 24px;
   margin-left: auto;
   svg {
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
     color: #24242d;
     fill: #24242d;
   }

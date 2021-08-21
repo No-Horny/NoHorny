@@ -5,8 +5,12 @@
   >
     <header class="modal-header"><h3>Choose a breathing technique</h3></header>
     <div class="modal-body">
-      <button @click="showRespirationTechniqueModal1 = true">Deep Breathing</button>
-      <button @click="showRespirationTechniqueModal2 = true">Continuous Breathing</button>
+      <button @click="showRespirationTechniqueModal1 = true">
+        Deep Breathing
+      </button>
+      <button @click="showRespirationTechniqueModal2 = true">
+        Continuous Breathing
+      </button>
       <respiration-modal
         :respirationTechniqueIndex="0"
         :showRespirationModal="showRespirationTechniqueModal1"
@@ -65,6 +69,14 @@ export default defineComponent({
     justify-content: center;
     padding: 6px 8px;
     font-weight: 500;
+    background: #ddd;
+    color: #24242d;
+    border: 0;
+    border-radius: 6px;
+    transition: filter 0.2s;
+    :hover {
+      filter: brightness(0.8);
+    }
   }
 }
 </style>

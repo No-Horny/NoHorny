@@ -37,7 +37,7 @@ export default defineComponent({
   font-size: 11.2px;
   font-weight: 500;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
-  transition: filter .2s;
+  transition: filter 0.2s;
   > svg {
     color: #24242d;
     fill: #24242d;

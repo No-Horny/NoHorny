@@ -5,22 +5,22 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent } from "vue";
 
 export default defineComponent({
-  name: 'RoundedActionButton',
+  name: "RoundedActionButton",
   props: {
     color: {
       type: String,
       required: false,
-      default: '#89FFBF'
-    }
-  }
-})
+      default: "#89FFBF",
+    },
+  },
+});
 </script>
 
 <style lang="scss" scoped>
-@import '../../styles/variables.scss';
+@import "../../../styles/variables.scss";
 
 .rounded-action-button {
   border: 0;
@@ -29,7 +29,8 @@ export default defineComponent({
   width: $default_width;
   color: #24242d;
   font-size: 14px;
-  transition: filter .2s;
+  transition: filter 0.2s;
+  box-shadow: 0px 2px 6px rgb(0 0 0 / 25%);
   &:hover {
     filter: brightness(0.8);
   }

@@ -17,7 +17,9 @@
         />
       </div>
     </div>
-    <span class="have-not-streaks" v-else>You have not old streaks to see!</span>
+    <span class="have-not-streaks" v-else
+      >You have not old streaks to see!</span
+    >
   </div>
 </template>
 

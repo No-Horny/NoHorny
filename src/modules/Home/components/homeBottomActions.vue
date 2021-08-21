@@ -11,18 +11,24 @@
       <icon icon="fluent:history-20-filled" />
       STREAK HISTORY
     </rect-action-button>
-    <rect-action-button color="#FFDD66" @click="showChooseRespirationModal = true">
+    <rect-action-button
+      color="#FFDD66"
+      @click="showChooseRespirationModal = true"
+    >
       <icon icon="ant-design:alert-filled" />
       PANIC BUTTON
     </rect-action-button>
-    <choose-a-respiration-modal :showChooseRespirationModal="showChooseRespirationModal" @close="showChooseRespirationModal = false" />
+    <choose-a-respiration-modal
+      :showChooseRespirationModal="showChooseRespirationModal"
+      @close="showChooseRespirationModal = false"
+    />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
 import RectActionButton from "./rectActionButton.vue";
-import ChooseARespirationModal from './Respirations/chooseARespirationModal.vue'
+import ChooseARespirationModal from "./Respirations/chooseARespirationModal.vue";
 import RespirationModal from "./Respirations/respirationModal.vue";
 import { Icon } from "@iconify/vue";
 

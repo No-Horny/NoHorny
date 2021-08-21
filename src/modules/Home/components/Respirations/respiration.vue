@@ -1,6 +1,12 @@
 <template>
   <div class="outside">
-    <div class="inside" :class="currentAnimation" :style="`animation-duration: ${animationDuration}s;`">{{ visualReturn }}</div>
+    <div
+      class="inside"
+      :class="currentAnimation"
+      :style="`animation-duration: ${animationDuration}s;`"
+    >
+      {{ visualReturn }}
+    </div>
   </div>
 </template>
 
@@ -44,7 +50,7 @@ export default defineComponent({
       }
     },
     startPratice() {
-      this.currentAnimation = ''
+      this.currentAnimation = "";
       this.respirationStep({
         stepTimerCount: 5,
         prefixText: `Respiration starting in`,
@@ -52,7 +58,7 @@ export default defineComponent({
       });
     },
     breathIn() {
-      this.currentAnimation = `breathIn`
+      this.currentAnimation = `breathIn`;
       this.animationDuration = this.technique.steps[0];
       this.respirationStep({
         stepTimerCount: this.technique.steps[0],
@@ -70,7 +76,7 @@ export default defineComponent({
       });
     },
     breathOut() {
-      this.currentAnimation = `breathOut`
+      this.currentAnimation = `breathOut`;
       this.animationDuration = this.technique.steps[2];
       this.respirationStep({
         stepTimerCount: this.technique.steps[2],
@@ -79,7 +85,7 @@ export default defineComponent({
       });
     },
     rest() {
-      this.currentAnimation = '';
+      this.currentAnimation = "";
       this.animationDuration = this.technique.steps[3];
       this.respirationStep({
         stepTimerCount: this.technique.steps[3],
@@ -95,60 +101,60 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-  .outside {
-    border: 10px solid #ddd;
-    background: #e2e2e2;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.outside {
+  border: 16px solid #ddd;
+  background: #e2e2e2;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.inside {
+  background: #ccc;
+  border: 0;
+  border-radius: 50%;
+  padding: 16px;
+  font-size: large;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 250px;
+  height: 250px;
+  transform: scale(0.5);
+  &.breathIn {
+    animation: breathIn;
   }
-  .inside {
-    background: #ccc;
-    border: 0;
-    border-radius: 50%;
-    padding: 16px;
-    font-size: larger;
-    font-weight: 500;
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    text-align: center;
-    width: 220px;
-    height: 220px;
+  &.breathHold {
+    animation: breathHold;
+  }
+  &.breathOut {
+    animation: breathOut;
+  }
+}
+@keyframes breathIn {
+  0% {
     transform: scale(0.5);
-    &.breathIn {
-      animation: breathIn;
-    }
-    &.breathHold {
-      animation: breathHold;
-    }
-    &.breathOut {
-      animation: breathOut;
-    }
   }
-  @keyframes breathIn {
-    0% {
-      transform: scale(0.5);
-    }
-    100% {
-      transform: scale(1);
-    }
+  100% {
+    transform: scale(1);
   }
-  @keyframes breathHold {
-    0% {
-      transform: scale(1);
-    }
-    100% {
-      transform: scale(1);
-    }
+}
+@keyframes breathHold {
+  0% {
+    transform: scale(1);
   }
-  @keyframes breathOut {
-    0% {
-      transform: scale(1);
-    }
-    100% {
-      transform: scale(0.5);
-    }
+  100% {
+    transform: scale(1);
   }
+}
+@keyframes breathOut {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.5);
+  }
+}
 </style>

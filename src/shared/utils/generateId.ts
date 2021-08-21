@@ -1,5 +1,6 @@
 export function GenerateId(len: number, base?: string) {
-  base = base || "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  base =
+    base || "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
   var randomString = "";
   for (var i = 0; i < len; i++) {

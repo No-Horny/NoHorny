@@ -6,7 +6,10 @@
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "serve": "vite preview",
-    "deploy": "vercel --prod"
+    "deploy": "yarn prettier --write . && vercel --prod"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
   },
   "dependencies": {
     "axios": "^0.21.1",
@@ -18,6 +21,9 @@
     "@vitejs/plugin-vue": "^1.2.4",
     "@vue/compiler-sfc": "^3.0.5",
     "@vuedx/typescript-plugin-vue": "^0.7.4",
+    "husky": "^7.0.1",
+    "lint-staged": "^11.1.2",
+    "prettier": "2.3.2",
     "sass": "^1.35.2",
     "typescript": "^4.3.2",
     "vercel": "^23.0.1",

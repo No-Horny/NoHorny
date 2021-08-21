@@ -1,8 +1,10 @@
-import Home from './views/Home.vue';
+import Index from "./views/Index.vue";
 
-export default [{
-  path: '/diary',
-  name: 'diary',
-  title: 'NoFap Diary',
-  component: Home,
-}]
+export default [
+  {
+    path: "/diary",
+    name: "diary",
+    title: "NoFap Diary",
+    component: Index,
+  },
+];

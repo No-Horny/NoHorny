@@ -6,8 +6,14 @@
     <h2>{{ timer }}</h2>
     <h3>Days, Hours, Minutes and Seconds.</h3>
     <div>
-      <span><strong>StartedAt:</strong> {{ new Date(startedTime).toLocaleString() }}</span>
-      <span><strong>finishedAt:</strong> {{ new Date(endedTime).toLocaleString() }}</span>
+      <span
+        ><strong>StartedAt:</strong>
+        {{ new Date(startedTime).toLocaleString() }}</span
+      >
+      <span
+        ><strong>finishedAt:</strong>
+        {{ new Date(endedTime).toLocaleString() }}</span
+      >
     </div>
   </div>
 </template>
@@ -37,7 +43,8 @@ export default defineComponent({
     };
   },
   created() {
-    var secsDiff = new Date(this.endedTime).getTime() - new Date(this.startedTime).getTime();
+    var secsDiff =
+      new Date(this.endedTime).getTime() - new Date(this.startedTime).getTime();
     var days = Math.floor(secsDiff / (1000 * 60 * 60 * 24));
     var hours = Math.floor(
       (secsDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)

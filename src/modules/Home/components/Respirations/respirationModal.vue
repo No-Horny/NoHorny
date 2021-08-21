@@ -3,7 +3,9 @@
     :class="showRespirationModal ? 'open' : 'closed'"
     @close="$emit('close')"
   >
-    <header class="modal-header"><h3>{{ techniques[respirationTechniqueIndex].name }}</h3></header>
+    <header class="modal-header">
+      <h3>{{ techniques[respirationTechniqueIndex].name }}</h3>
+    </header>
     <div class="modal-body">
       <respiration-guide
         v-if="showRespirationModal"

@@ -1,8 +1,10 @@
-import Home from './views/Home.vue';
+import Index from "./views/Index.vue";
 
-export default [{
-  path: '/',
-  name: 'home page',
-  title: 'Home',
-  component: Home,
-}]
+export default [
+  {
+    path: "/",
+    name: "home",
+    title: "Home",
+    component: Index,
+  },
+];

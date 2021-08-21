@@ -17,20 +17,35 @@
     </div>
   </div>
 
-  <modal :class="showRelapseDialogModal? 'open' : 'closed'" @close="showRelapseDialogModal = false">
+  <modal
+    :class="showRelapseDialogModal ? 'open' : 'closed'"
+    @close="showRelapseDialogModal = false"
+  >
     <header><h3>Relapse</h3></header>
     <div class="modal-body">Do you really want to relapse?</div>
     <footer>
-      <button @click="showRelapseDialogModal = false" class="close">Cancel</button>
-      <button @click="resetStartTime" style="background: #4078c0; color: #fff">Relapse</button>
+      <button @click="showRelapseDialogModal = false" class="close">
+        Cancel
+      </button>
+      <button @click="resetStartTime" style="background: #4078c0; color: #fff">
+        Relapse
+      </button>
     </footer>
   </modal>
 
-  <modal v-if="showAfterRalapseDialogModal" @close="showAfterRalapseDialogModal = false">
+  <modal
+    v-if="showAfterRalapseDialogModal"
+    @close="showAfterRalapseDialogModal = false"
+  >
     <header><h3>Your streak is reseted!</h3></header>
     <div class="modal-body">Try return more stronger!</div>
     <footer>
-      <button @click="showAfterRalapseDialogModal = false" style="background: #4078c0; color: #fff">Ok</button>
+      <button
+        @click="showAfterRalapseDialogModal = false"
+        style="background: #4078c0; color: #fff"
+      >
+        Ok
+      </button>
     </footer>
   </modal>
 </template>
@@ -38,7 +53,7 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import { Icon } from "@iconify/vue";
-import Modal from './appModal.vue';
+import Modal from "./appModal.vue";
 
 export default defineComponent({
   name: "StreakTimer",
@@ -86,10 +101,10 @@ export default defineComponent({
 
       this.startTime = new Date();
       localStorage.setItem("startTime", `${this.startTime}`);
-      this.showRelapseDialogModal = false
-      this.showAfterRalapseDialogModal = true
+      this.showRelapseDialogModal = false;
+      this.showAfterRalapseDialogModal = true;
       return this.startTime;
-    }
+    },
   },
   mounted() {
     window.setInterval(() => {
@@ -112,7 +127,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import '../../styles/variables.scss';
+@import "../../styles/variables.scss";
 
 .streak-card {
   width: $default_width;
