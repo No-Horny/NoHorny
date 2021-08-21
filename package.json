@@ -9,7 +9,7 @@
     "deploy": "yarn prettier --write . && vercel --prod"
   },
   "lint-staged": {
-    "**/*": "prettier --write --ignore-unknown"
+    "**/*": "yarn run eslint . && prettier --write --ignore-unknown"
   },
   "dependencies": {
     "axios": "^0.21.1",
@@ -18,9 +18,13 @@
   },
   "devDependencies": {
     "@iconify/vue": "^3.0.0-beta.1",
+    "@typescript-eslint/eslint-plugin": "^4.29.2",
+    "@typescript-eslint/parser": "^4.29.2",
     "@vitejs/plugin-vue": "^1.2.4",
     "@vue/compiler-sfc": "^3.0.5",
     "@vuedx/typescript-plugin-vue": "^0.7.4",
+    "eslint": "^7.32.0",
+    "eslint-plugin-vue": "^7.16.0",
     "husky": "^7.0.1",
     "lint-staged": "^11.1.2",
     "prettier": "2.3.2",
