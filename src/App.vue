@@ -11,7 +11,7 @@
     </header>
 
     <div class="modal-body">
-      <p>This feature is not implemented yet!</p>
+      <p>This feature not implemented yet!</p>
       <br />
       <p>Access the repository on github to see the project ToDo list.</p>
     </div>

@@ -55,7 +55,7 @@
 - [x] Improve some styles
 - [x] Create settings page
 - [x] Get user default theme
-- [ ] More respiration techniques
+- [x] Respiration guided v2
 - [ ] More options, than respiration on panic button
   - [ ] Motivational phrases
   - [ ] Free self improvement books

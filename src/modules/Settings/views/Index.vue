@@ -9,7 +9,7 @@
     </nav>
 
     <div class="page-body">
-      <div class="auth-methods setting-section" @click="$emit('notWorkingYet')">
+      <!-- <div class="auth-methods setting-section" @click="$emit('notWorkingYet')">
         <h3>Sign in to don't lose your data</h3>
 
         <button class="sign-in-button google">
@@ -21,7 +21,7 @@
           <icon icon="bi:github" />
           Sign in with Github
         </button>
-      </div>
+      </div> -->
 
       <div class="setting-section theme-settings">
         <h3>Dark mode</h3>
@@ -33,11 +33,11 @@
         </span>
       </div>
 
-      <div class="setting-section lang-settings">
+      <!-- <div class="setting-section lang-settings">
         <h3>Change your app language</h3>
 
         <small>Nothing to see, yet</small>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>

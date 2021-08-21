@@ -66,7 +66,7 @@ export default defineComponent({
       this.animationDuration = this.technique.steps[0];
       this.respirationStep({
         stepTimerCount: this.technique.steps[0],
-        prefixText: `Breath in by`,
+        prefixText: `Inhale for`,
         nextStep: this.hold,
       });
     },
@@ -75,7 +75,7 @@ export default defineComponent({
       this.animationDuration = this.technique.steps[1];
       this.respirationStep({
         stepTimerCount: this.technique.steps[1],
-        prefixText: `Hold by`,
+        prefixText: `Hold for`,
         nextStep: this.breathOut,
       });
     },
@@ -84,7 +84,7 @@ export default defineComponent({
       this.animationDuration = this.technique.steps[2];
       this.respirationStep({
         stepTimerCount: this.technique.steps[2],
-        prefixText: `Breath out by`,
+        prefixText: `Exhale for`,
         nextStep: this.rest,
       });
     },

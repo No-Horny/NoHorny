@@ -13,7 +13,7 @@
       />
     </div>
     <footer>
-      <button @click="$emit('close')" class="close">Close</button>
+      <button @click="$emit('close')" class="close">Return</button>
     </footer>
   </modal>
 </template>
@@ -21,7 +21,7 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import RespirationGuide from "./respiration.vue";
-import Modal from "../../../../shared/components/appModal.vue";
+import Modal from "../../../../../shared/components/appModal.vue";
 import { techniques } from "./techniques";
 
 export default defineComponent({

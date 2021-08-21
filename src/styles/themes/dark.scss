@@ -44,6 +44,14 @@ body.dark {
         color: $color_primary_dark !important;
       }
     }
+    footer {
+      button {
+        &.close {
+          background: tomato !important;
+          color: #fff !important;
+        }
+      }
+    }
   }
   .breathing-component {
     border-color: $navbar_primary_dark !important;
