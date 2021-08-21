@@ -59,9 +59,6 @@
   - [ ] Motivational phrases
   - [ ] Free self improvement books
   - [ ] ...
-- [ ] Translation
-  - [ ] Manager logic
-  - [ ] pt-BR
 
 <h3>ToDo before realease v2</h3>
 
@@ -72,5 +69,5 @@
 <h3>Future plans</h3>
 
 - [ ] Firebase integration to cross plataform
-- [ ] Translation to other languages than english and portuguese
+- [ ] Translation to other languages
 - [ ] ...
