@@ -6,10 +6,13 @@
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "serve": "vite preview",
-    "deploy": "yarn prettier --write . && vercel --prod"
+    "deploy": "yarn prettier --write . && vercel --prod",
+    "checkout": "eslint --fix . && prettier --write .",
+    "eslint": "eslint --fix .",
+    "prettier": "prettier --write ."
   },
   "lint-staged": {
-    "**/*": "yarn run eslint . && prettier --write --ignore-unknown"
+    "**/*": "eslint . --fix && prettier --write --ignore-unknown"
   },
   "dependencies": {
     "axios": "^0.21.1",

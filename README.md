@@ -60,12 +60,13 @@
   - [ ] Free self improvement books
   - [ ] ...
 - [ ] Translation
+  - [ ] Manager logic
   - [ ] pt-BR
 
 <h3>ToDo before realease v2</h3>
 
-- [ ] Change App Icons
-- [ ] Change Website host from vercel to netlify
+- [x] Change App Icons
+- [x] Change Website host from vercel to netlify
 - [ ] Remove beta warn
 
 <h3>Future plans</h3>
