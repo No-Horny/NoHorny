@@ -53,7 +53,6 @@ export default defineComponent({
       const records = JSON.parse(localStorage.getItem("diary-recods") || "[]");
       this.records = records;
 
-      // (GAMBIARRA) Re-render the component
       this.showRecords = false;
       this.$nextTick(() => {
         this.showRecords = true;

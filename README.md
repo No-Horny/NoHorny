@@ -54,6 +54,7 @@
 - [x] Dark theme
 - [x] Improve some styles
 - [x] Create settings page
+- [x] Get user default theme
 - [ ] More respiration techniques
 - [ ] More options, than respiration on panic button
   - [ ] Motivational phrases
