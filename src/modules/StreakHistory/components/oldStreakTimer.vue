@@ -7,11 +7,11 @@
     <h3>Days, Hours, Minutes and Seconds.</h3>
     <div>
       <span
-        ><strong>StartedAt:</strong>
+        ><strong>Started at:</strong>
         {{ new Date(startedTime).toLocaleString() }}</span
       >
       <span
-        ><strong>finishedAt:</strong>
+        ><strong>Finished at:</strong>
         {{ new Date(endedTime).toLocaleString() }}</span
       >
     </div>

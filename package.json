@@ -3,7 +3,7 @@
   "license": "MIT",
   "name": "no-horny",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "vue-tsc --noEmit && vite build",
     "serve": "vite preview",
     "deploy": "yarn prettier --write . && vercel --prod",

@@ -51,20 +51,20 @@
 - [x] Apply Modular Architecture to project
 - [x] Create diary
 - [x] Respiration guided v1
-- [ ] Create settings page
-- [ ] Improve some styles
-- [ ] Dark theme
+- [x] Dark theme
+- [x] Improve some styles
+- [x] Create settings page
 - [ ] More respiration techniques
 - [ ] More options, than respiration on panic button
   - [ ] Motivational phrases
   - [ ] Free self improvement books
   - [ ] ...
 
-<h3>ToDo before realease v2</h3>
+<h3>ToDo before realease v1.2</h3>
 
 - [x] Change App Icons
 - [x] Change Website host from vercel to netlify
-- [ ] Remove beta warn
+- [x] Remove beta warn
 
 <h3>Future plans</h3>
 

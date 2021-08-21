@@ -1,12 +1,15 @@
 <template>
-  <div class="outside">
-    <div
-      class="inside"
-      :class="currentAnimation"
-      :style="`animation-duration: ${animationDuration}s;`"
-    >
-      {{ visualReturn }}
+  <div>
+    <div class="outside breathing-component">
+      <div
+        class="inside"
+        :class="currentAnimation"
+        :style="`animation-duration: ${animationDuration}s;`"
+      ></div>
     </div>
+    <h3>
+      {{ visualReturnText }}
+    </h3>
   </div>
 </template>
 
@@ -18,7 +21,8 @@ export default defineComponent({
   props: ["technique"],
   data() {
     return {
-      visualReturn: "",
+      visualReturnText: "",
+      // visualReturnNumber: 0,
       currentAnimation: `none`,
       animationDuration: 0,
     };
@@ -34,12 +38,12 @@ export default defineComponent({
       nextStep(): void;
     }) {
       let stepTimerCounter = stepTimerCount;
-      this.visualReturn = `${prefixText} ${stepTimerCounter}`;
+      this.visualReturnText = `${prefixText} ${stepTimerCounter}`;
 
       if (stepTimerCount !== 0) {
         const stepTimer = setInterval(() => {
           stepTimerCounter--;
-          this.visualReturn = `${prefixText} ${stepTimerCounter}`;
+          this.visualReturnText = `${prefixText} ${stepTimerCounter}`;
           if (stepTimerCounter <= 0) {
             clearInterval(stepTimer);
             nextStep();
@@ -101,16 +105,20 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+h3 {
+  font-weight: 500;
+  margin-top: 16px;
+}
 .outside {
   border: 16px solid #ddd;
-  background: #e2e2e2;
+  background: #7dcaf3;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .inside {
-  background: #ccc;
+  background: #54b6eb;
   border: 0;
   border-radius: 50%;
   padding: 16px;

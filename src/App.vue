@@ -23,6 +23,7 @@
         href="https://github.com/No-Horny/NoHorny-website/tree/beta_version"
         target="_blank"
         @click="showNotWorkingYet = false"
+        style="background: rgb(64, 120, 192); color: rgb(255, 255, 255)"
         >Access Github</a
       >
     </footer>
@@ -33,6 +34,7 @@
 import { defineComponent } from "vue";
 import TopBar from "./shared/components/topbar.vue";
 import Modal from "./shared/components/appModal.vue";
+import { userPreferences } from "./shared/user-preferences";
 
 export default defineComponent({
   name: "App",
@@ -44,6 +46,9 @@ export default defineComponent({
     return {
       showNotWorkingYet: false,
     };
+  },
+  created() {
+    document.body.classList.add(userPreferences.theme);
   },
 });
 </script>

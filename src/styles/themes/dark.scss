@@ -1,0 +1,80 @@
+@import "../variables.scss";
+
+body.dark {
+  background: $bg_primary_dark !important;
+  color: $color_primary_dark !important;
+  * {
+    svg {
+      fill: $color_primary_dark !important;
+      color: $color_primary_dark !important;
+    }
+  }
+  .top-bar {
+    background: $navbar_primary_dark !important;
+    .logo {
+      color: $color_primary_dark !important;
+    }
+  }
+  .streak-card {
+    background: $card_bg_dark !important;
+    button {
+      background: $button_bg_dark !important;
+      color: $color_primary_dark !important;
+    }
+  }
+  .rect-action-button {
+    svg {
+      color: #24242d !important;
+      fill: #24242d !important;
+    }
+  }
+  .modal-container {
+    background: $card_bg_dark !important;
+    header {
+      background: $navbar_primary_dark !important;
+    }
+    .modal-body {
+      button {
+        background: $button_bg_dark !important;
+        color: $color_primary_dark !important;
+      }
+      .default-input,
+      .default-text-area {
+        background: $button_bg_dark !important;
+        color: $color_primary_dark !important;
+      }
+    }
+  }
+  .breathing-component {
+    border-color: $navbar_primary_dark !important;
+  }
+  .records {
+    .record {
+      background: $card_bg_dark !important;
+      > .inputs {
+        input,
+        textarea {
+          background: $button_bg_dark !important;
+          color: $color_primary_dark !important;
+        }
+      }
+      > .controls {
+        button {
+          background: $button_bg_dark !important;
+          &[delete] {
+            svg {
+              color: tomato !important;
+              fill: tomato !important;
+            }
+          }
+          &[update] {
+            svg {
+              color: rgb(64, 120, 192) !important;
+              fill: rgb(64, 120, 192) !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}

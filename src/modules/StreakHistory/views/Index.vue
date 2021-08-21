@@ -51,6 +51,10 @@ export default defineComponent({
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-top: 32px;
+  h2 {
+    margin-bottom: 12px;
+  }
 }
 .have-not-streaks {
   margin-top: 8px;

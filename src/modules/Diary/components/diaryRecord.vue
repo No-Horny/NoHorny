@@ -186,10 +186,10 @@ export default defineComponent({
         }
       }
       &[update] {
-        color: #ffc107;
+        color: rgb(64, 120, 192);
         > svg {
-          color: #ffc107;
-          fill: #ffc107;
+          color: rgb(64, 120, 192);
+          fill: rgb(64, 120, 192);
         }
       }
     }

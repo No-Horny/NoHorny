@@ -26,7 +26,11 @@
       <div class="setting-section theme-settings">
         <h3>Dark mode</h3>
 
-        <switch-button :isChecked="isDark" @changed="$emit('notWorkingYet')" />
+        <span class="theme-switch-container">
+          OFF
+          <switch-button :isChecked="isDark" @changed="handleThemes" />
+          ON
+        </span>
       </div>
 
       <div class="setting-section lang-settings">
@@ -42,6 +46,11 @@
 import { Icon } from "@iconify/vue";
 import SwitchButton from "../components/switchButton.vue";
 import { defineComponent } from "vue";
+import {
+  userPreferences,
+  changeThemeToDark,
+  changeThemeToLight,
+} from "../../../shared/user-preferences";
 
 export default defineComponent({
   name: "Settings",
@@ -52,7 +61,23 @@ export default defineComponent({
   data() {
     return {
       isDark: false,
+      userPreferences,
     };
+  },
+  methods: {
+    handleThemes() {
+      this.isDark = !this.isDark;
+      if (this.isDark) {
+        changeThemeToDark(true);
+      } else {
+        changeThemeToLight(true);
+      }
+    },
+  },
+  created() {
+    if (userPreferences.theme === "dark") {
+      this.isDark = true;
+    }
   },
 });
 </script>
@@ -77,6 +102,15 @@ nav {
       fill: #24242d;
     }
   }
+}
+.theme-switch-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
 }
 .page-body {
   width: $default_width;
