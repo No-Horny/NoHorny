@@ -40,7 +40,7 @@
       <button @click="$emit('close')" class="close">Return</button>
       <button
         @click="$emit('start')"
-        style="background: rgb(64, 120, 192) !important"
+        style="background: rgb(64, 120, 192) !important; color: #fff"
       >
         Start
       </button>
