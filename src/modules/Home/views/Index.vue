@@ -11,7 +11,7 @@ import { defineComponent } from "vue";
 import StopBeingHorny from "../components/stopBeingHorny.vue";
 import HomeBottomActions from "../components/homeBottomActions.vue";
 import StreakTimer from "../../../shared/components/streakTimer.vue";
-import { techniques } from "../components/PanicButton/Respirations/techniques";
+import { techniques } from "../components/PanicButton/Breathings/techniques";
 
 export default defineComponent({
   name: "Home",

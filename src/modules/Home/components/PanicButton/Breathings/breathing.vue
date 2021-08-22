@@ -17,7 +17,7 @@
 import { defineComponent } from "vue";
 
 export default defineComponent({
-  name: "Respiration Modal",
+  name: "Breathing Modal",
   props: ["technique"],
   data() {
     return {
@@ -28,7 +28,7 @@ export default defineComponent({
     };
   },
   methods: {
-    respirationStep({
+    breathingStep({
       stepTimerCount,
       prefixText,
       nextStep,
@@ -55,16 +55,16 @@ export default defineComponent({
     },
     startPratice() {
       this.currentAnimation = "";
-      this.respirationStep({
+      this.breathingStep({
         stepTimerCount: 5,
-        prefixText: `Respiration starting in`,
+        prefixText: `Breathing starting in`,
         nextStep: this.breathIn,
       });
     },
     breathIn() {
       this.currentAnimation = `breathIn`;
       this.animationDuration = this.technique.steps[0];
-      this.respirationStep({
+      this.breathingStep({
         stepTimerCount: this.technique.steps[0],
         prefixText: `Inhale for`,
         nextStep: this.hold,
@@ -73,7 +73,7 @@ export default defineComponent({
     hold() {
       this.currentAnimation = `breathHold`;
       this.animationDuration = this.technique.steps[1];
-      this.respirationStep({
+      this.breathingStep({
         stepTimerCount: this.technique.steps[1],
         prefixText: `Hold for`,
         nextStep: this.breathOut,
@@ -82,7 +82,7 @@ export default defineComponent({
     breathOut() {
       this.currentAnimation = `breathOut`;
       this.animationDuration = this.technique.steps[2];
-      this.respirationStep({
+      this.breathingStep({
         stepTimerCount: this.technique.steps[2],
         prefixText: `Exhale for`,
         nextStep: this.rest,
@@ -91,7 +91,7 @@ export default defineComponent({
     rest() {
       this.currentAnimation = "";
       this.animationDuration = this.technique.steps[3];
-      this.respirationStep({
+      this.breathingStep({
         stepTimerCount: this.technique.steps[3],
         prefixText: `Take a rest by`,
         nextStep: this.breathIn,

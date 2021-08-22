@@ -1,37 +1,37 @@
 <template>
   <modal
-    :class="showRespirationModal ? 'open' : 'closed'"
+    :class="showBreathingModal ? 'open' : 'closed'"
     @close="$emit('close')"
   >
     <header class="modal-header">
-      <h3>{{ techniques[respirationTechniqueIndex].name }}</h3>
+      <h3>{{ techniques[breathingTechniqueIndex].name }}</h3>
     </header>
     <div class="modal-body">
-      <p>{{ techniques[respirationTechniqueIndex].description }}</p>
+      <p>{{ techniques[breathingTechniqueIndex].description }}</p>
       <br />
       <ul>
-        <li v-if="techniques[respirationTechniqueIndex].steps[0] !== 0">
+        <li v-if="techniques[breathingTechniqueIndex].steps[0] !== 0">
           <small
             >Inhale for
-            {{ techniques[respirationTechniqueIndex].steps[0] }} seconds;</small
+            {{ techniques[breathingTechniqueIndex].steps[0] }} seconds;</small
           >
         </li>
-        <li v-if="techniques[respirationTechniqueIndex].steps[1] !== 0">
+        <li v-if="techniques[breathingTechniqueIndex].steps[1] !== 0">
           <small
             >Hold for
-            {{ techniques[respirationTechniqueIndex].steps[1] }} seconds;</small
+            {{ techniques[breathingTechniqueIndex].steps[1] }} seconds;</small
           >
         </li>
-        <li v-if="techniques[respirationTechniqueIndex].steps[2] !== 0">
+        <li v-if="techniques[breathingTechniqueIndex].steps[2] !== 0">
           <small
             >Exhale for
-            {{ techniques[respirationTechniqueIndex].steps[2] }} seconds;</small
+            {{ techniques[breathingTechniqueIndex].steps[2] }} seconds;</small
           >
         </li>
-        <li v-if="techniques[respirationTechniqueIndex].steps[3] !== 0">
+        <li v-if="techniques[breathingTechniqueIndex].steps[3] !== 0">
           <small
             >Take a rest for
-            {{ techniques[respirationTechniqueIndex].steps[3] }} seconds;</small
+            {{ techniques[breathingTechniqueIndex].steps[3] }} seconds;</small
           >
         </li>
       </ul>
@@ -54,7 +54,7 @@ import Modal from "../../../../../shared/components/appModal.vue";
 import { techniques } from "./techniques";
 
 export default defineComponent({
-  name: "PreRespirationModal",
+  name: "PreBreathingModal",
   components: {
     Modal,
   },
@@ -64,11 +64,11 @@ export default defineComponent({
     };
   },
   props: {
-    showRespirationModal: {
+    showBreathingModal: {
       type: Boolean,
       required: true,
     },
-    respirationTechniqueIndex: {
+    breathingTechniqueIndex: {
       type: Number,
       required: true,
     },

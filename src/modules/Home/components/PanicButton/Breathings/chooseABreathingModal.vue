@@ -1,29 +1,29 @@
 <template>
   <modal
-    :class="showChooseRespirationModal ? 'open' : 'closed'"
+    :class="showChooseBreathingModal ? 'open' : 'closed'"
     @close="$emit('close')"
   >
     <header class="modal-header"><h3>Choose a breathing technique</h3></header>
     <div class="modal-body">
       <div
-        class="respiration-picker"
+        class="breathing-picker"
         v-for="(technique, index) in techniques"
         :key="index"
       >
-        <button @click="technique.showPreRespirationModal = true">
+        <button @click="technique.showPreBreathingModal = true">
           {{ technique.name }}
         </button>
 
-        <pre-respiration-modal
-          :respirationTechniqueIndex="index"
-          :showRespirationModal="technique.showPreRespirationModal"
-          @close="technique.showPreRespirationModal = false"
-          @start="technique.showRespirationModal = true"
+        <pre-breathing-modal
+          :breathingTechniqueIndex="index"
+          :showBreathingModal="technique.showPreBreathingModal"
+          @close="technique.showPreBreathingModal = false"
+          @start="technique.showBreathingModal = true"
         />
-        <respiration-modal
-          :respirationTechniqueIndex="index"
-          :showRespirationModal="technique.showRespirationModal"
-          @close="technique.showRespirationModal = false"
+        <breathing-modal
+          :breathingTechniqueIndex="index"
+          :showBreathingModal="technique.showBreathingModal"
+          @close="technique.showBreathingModal = false"
         />
       </div>
       <footer>
@@ -36,26 +36,26 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import Modal from "../../../../../shared/components/appModal.vue";
-import RespirationModal from "./respirationModal.vue";
-import PreRespirationModal from "./preRespirationModal.vue";
+import BreathingModal from "./breathingModal.vue";
+import PreBreathingModal from "./preBreathingModal.vue";
 import { techniques } from "./techniques";
 
 export default defineComponent({
-  name: "ChooseARespirationModal",
+  name: "ChooseABreathingModal",
   components: {
     Modal,
-    RespirationModal,
-    PreRespirationModal,
+    BreathingModal,
+    PreBreathingModal,
   },
   data() {
     return {
       techniques,
-      showRespirationTechniqueModal1: false,
-      showRespirationTechniqueModal2: false,
+      showBreathingTechniqueModal1: false,
+      showBreathingTechniqueModal2: false,
     };
   },
   props: {
-    showChooseRespirationModal: {
+    showChooseBreathingModal: {
       type: Boolean,
       required: true,
     },
@@ -69,7 +69,7 @@ export default defineComponent({
   align-items: center;
   justify-content: center;
   gap: 8px;
-  .respiration-picker {
+  .breathing-picker {
     width: 100%;
     button {
       width: 100%;

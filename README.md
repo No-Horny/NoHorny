@@ -50,13 +50,13 @@
 - [x] Remove all dynamic pages
 - [x] Apply Modular Architecture to project
 - [x] Create diary
-- [x] Respiration guided v1
+- [x] Guided breathing v1
 - [x] Dark theme
 - [x] Improve some styles
 - [x] Create settings page
 - [x] Get user default theme
-- [x] Respiration guided v2
-- [ ] More options, than respiration on panic button
+- [x] Guided breathing v2
+- [ ] More options, than breathing on panic button
   - [ ] Motivational phrases
   - [ ] Free self improvement books
   - [ ] ...

@@ -6,34 +6,34 @@
     <div class="modal-body">
       <p>What helps you feel calm?</p>
       <br />
-      <button @click="showChooseRespirationModal = true">
-        Respiration Techniques
+      <button @click="showChooseBreathingModal = true">
+        Breathing Techniques
       </button>
     </div>
     <footer>
       <button @click="$emit('close')" class="close">Return</button>
     </footer>
   </modal>
-  <choose-a-respiration-modal
-    :showChooseRespirationModal="showChooseRespirationModal"
-    @close="showChooseRespirationModal = false"
+  <choose-a-breathing-modal
+    :showChooseBreathingModal="showChooseBreathingModal"
+    @close="showChooseBreathingModal = false"
   />
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
 import Modal from "../../../../shared/components/appModal.vue";
-import ChooseARespirationModal from "./Respirations/chooseARespirationModal.vue";
+import ChooseABreathingModal from "./Breathings/chooseABreathingModal.vue";
 
 export default defineComponent({
   name: "PanicButtonModal",
   components: {
     Modal,
-    ChooseARespirationModal,
+    ChooseABreathingModal,
   },
   data() {
     return {
-      showChooseRespirationModal: false,
+      showChooseBreathingModal: false,
     };
   },
   props: {
