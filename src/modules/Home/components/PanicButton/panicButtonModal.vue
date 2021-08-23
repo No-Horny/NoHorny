@@ -6,17 +6,36 @@
     <div class="modal-body">
       <p>What helps you feel calm?</p>
       <br />
-      <button @click="showChooseBreathingModal = true">
-        Breathing Techniques
-      </button>
+      <div class="panic-button-chooses">
+        <button
+          @click="
+            showChooseBreathingModal = true;
+            $emit('close');
+          "
+        >
+          Breathing Techniques
+        </button>
+        <button
+          @click="
+            showRandomPhraseModal = true;
+            $emit('close');
+          "
+        >
+          Random Motivational Phrase
+        </button>
+      </div>
     </div>
     <footer>
-      <button @click="$emit('close')" class="close">Return</button>
+      <button @click="$emit('close')" class="close">Close</button>
     </footer>
   </modal>
   <choose-a-breathing-modal
     :showChooseBreathingModal="showChooseBreathingModal"
     @close="showChooseBreathingModal = false"
+  />
+  <random-phrase-modal
+    :showModal="showRandomPhraseModal"
+    @close="showRandomPhraseModal = false"
   />
 </template>
 
@@ -24,16 +43,19 @@
 import { defineComponent } from "vue";
 import Modal from "../../../../shared/components/appModal.vue";
 import ChooseABreathingModal from "./Breathings/chooseABreathingModal.vue";
+import RandomPhraseModal from "./Phrases/phraseModal.vue";
 
 export default defineComponent({
   name: "PanicButtonModal",
   components: {
     Modal,
     ChooseABreathingModal,
+    RandomPhraseModal,
   },
   data() {
     return {
       showChooseBreathingModal: false,
+      showRandomPhraseModal: false,
     };
   },
   props: {
@@ -48,6 +70,13 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .modal-body {
+  .panic-button-chooses {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
   button {
     width: 100%;
     display: flex;

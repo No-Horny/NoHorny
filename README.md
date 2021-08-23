@@ -58,8 +58,7 @@
 - [x] Guided breathing v2
 - [ ] More options, than breathing on panic button
   - [ ] Motivational phrases
-  - [ ] Free self improvement books
-  - [ ] ...
+- [ ] Translation to other languages
 
 <h3>ToDo before realease v1.2</h3>
 
@@ -70,5 +69,4 @@
 <h3>Future plans</h3>
 
 - [ ] Firebase integration to cross plataform
-- [ ] Translation to other languages
 - [ ] ...

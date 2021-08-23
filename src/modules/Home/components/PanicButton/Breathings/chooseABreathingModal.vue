@@ -27,7 +27,7 @@
         />
       </div>
       <footer>
-        <button @click="$emit('close')" class="close">Return</button>
+        <button @click="$emit('close')" class="close">Close</button>
       </footer>
     </div>
   </modal>
