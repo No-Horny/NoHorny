@@ -56,8 +56,7 @@
 - [x] Create settings page
 - [x] Get user default theme
 - [x] Guided breathing v2
-- [ ] More options, than breathing on panic button
-  - [ ] Motivational phrases
+- [x] More options, than breathing on panic button
 - [ ] Translation to other languages
 
 <h3>ToDo before realease v1.2</h3>
