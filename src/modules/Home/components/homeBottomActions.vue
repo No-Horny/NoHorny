@@ -2,18 +2,18 @@
   <div class="container">
     <rect-action-button @click="$router.push('/diary')">
       <icon icon="uil:diary" />
-      NOFAP DIARY
+      {{ t('NoFapDiary') }}
     </rect-action-button>
     <rect-action-button
       @click="$router.push('/streak-history')"
       color="#A090FF"
     >
       <icon icon="fluent:history-20-filled" />
-      STREAK HISTORY
+      {{ t('StreakHistory') }}
     </rect-action-button>
     <rect-action-button color="#FFDD66" @click="showModal = true">
       <icon icon="ant-design:alert-filled" />
-      PANIC BUTTON
+      {{ t('PanicButton') }}
     </rect-action-button>
     <panic-button-modal :showModal="showModal" @close="showModal = false" />
   </div>
@@ -24,6 +24,7 @@ import { defineComponent } from "vue";
 import RectActionButton from "./rectActionButton.vue";
 import PanicButtonModal from "./PanicButton/panicButtonModal.vue";
 import { Icon } from "@iconify/vue";
+import { useI18n } from "vue-i18n";
 
 export default defineComponent({
   name: "HomeBottomActions",
@@ -33,7 +34,10 @@ export default defineComponent({
     PanicButtonModal,
   },
   data() {
+    const { t } = useI18n();
+
     return {
+      t,
       showModal: false,
     };
   },

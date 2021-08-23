@@ -13,7 +13,7 @@
       />
     </div>
     <footer>
-      <button @click="$emit('close')" class="close">Return</button>
+      <button @click="$emit('close')" class="close">{{ t('Return') }}</button>
     </footer>
   </modal>
 </template>
@@ -23,6 +23,7 @@ import { defineComponent } from "vue";
 import BreathingGuide from "./breathing.vue";
 import Modal from "../../../../../shared/components/appModal.vue";
 import { techniques } from "./techniques";
+import { useI18n } from "vue-i18n";
 
 export default defineComponent({
   name: "BreathingModal",
@@ -41,7 +42,10 @@ export default defineComponent({
     },
   },
   data() {
+    const { t } = useI18n()
+
     return {
+      t,
       techniques,
     };
   },

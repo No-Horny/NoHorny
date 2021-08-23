@@ -1,7 +1,7 @@
 <template>
   <modal :class="showModal ? 'open' : 'closed'">
     <header>
-      <h3>Random Motivational Phrase</h3>
+      <h3>{{ t("RandomMotivationalPhrase") }}</h3>
     </header>
     <div class="modal-body">
       <p>
@@ -12,7 +12,7 @@
       >
     </div>
     <footer>
-      <button class="close" @click="$emit('close')">Close</button>
+      <button class="close" @click="$emit('close')">{{ t("Close") }}</button>
       <button
         @click="randomPhrase"
         style="
@@ -20,7 +20,7 @@
           color: rgb(255, 255, 255) !important;
         "
       >
-        Other Phrase
+        {{ t("OtherPhrase") }}
       </button>
     </footer>
   </modal>
@@ -28,6 +28,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import { useI18n } from "vue-i18n";
 import Modal from "../../../../../shared/components/appModal.vue";
 import { IPhrase, phrases } from "./phrases";
 
@@ -37,7 +38,10 @@ export default defineComponent({
     Modal,
   },
   data() {
+    const { t } = useI18n();
+
     return {
+      t,
       phrases,
       phrase: {} as IPhrase,
     };

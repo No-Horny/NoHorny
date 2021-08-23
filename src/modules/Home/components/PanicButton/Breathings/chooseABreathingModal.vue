@@ -3,7 +3,7 @@
     :class="showChooseBreathingModal ? 'open' : 'closed'"
     @close="$emit('close')"
   >
-    <header class="modal-header"><h3>Choose a breathing technique</h3></header>
+    <header class="modal-header"><h3>{{ t('ChooseABreathingTechnique') }}</h3></header>
     <div class="modal-body">
       <div
         class="breathing-picker"
@@ -27,7 +27,7 @@
         />
       </div>
       <footer>
-        <button @click="$emit('close')" class="close">Close</button>
+        <button @click="$emit('close')" class="close">{{ t('Close') }}</button>
       </footer>
     </div>
   </modal>
@@ -35,6 +35,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import { useI18n } from "vue-i18n";
 import Modal from "../../../../../shared/components/appModal.vue";
 import BreathingModal from "./breathingModal.vue";
 import PreBreathingModal from "./preBreathingModal.vue";
@@ -48,7 +49,10 @@ export default defineComponent({
     PreBreathingModal,
   },
   data() {
+    const { t } = useI18n()
+
     return {
+      t,
       techniques,
       showBreathingTechniqueModal1: false,
       showBreathingTechniqueModal2: false,

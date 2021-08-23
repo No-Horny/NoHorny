@@ -1,10 +1,6 @@
 <template>
-  <div v-if="1 + 1 === 3" class="beta-warn">
-    <strong style="font-weight: 500">You are on the beta test website!</strong>
-  </div>
   <nav v-if="$route.name !== 'settings'" class="top-bar">
     <h1 class="logo" @click="$router.push('/')">No Horny</h1>
-
     <a
       class="settings-button"
       v-if="$route.name === 'home'"

@@ -3,34 +3,36 @@
     :class="showAddNewRecordModal ? 'open' : 'closed'"
     @close="$emit('close')"
   >
-    <header><h3>New diary record</h3></header>
+    <header>
+      <h3>{{ t("NewDiaryRecord") }}</h3>
+    </header>
     <form
       class="modal-body"
       id="add-record-form"
       @submit.prevent="addNewRecord"
     >
-      <label for="title-input" class="osr">Record title</label>
+      <label for="title-input" class="osr">{{ t("RecordTitle") }}</label>
       <input
         type="text"
-        placeholder="Record title"
+        :placeholder="t('RecordTitle')"
         class="default-input"
         v-model="recordTitle"
       />
-      <label for="title-input" class="osr">Record description</label>
+      <label for="title-input" class="osr">{{ t("RecordDescription") }}</label>
       <textarea
         class="default-text-area"
         v-model="recordDescription"
-        placeholder="Record description"
+        :placeholder="t('RecordDescription')"
       ></textarea>
     </form>
     <footer>
-      <button @click="$emit('close')" class="close">Cancel</button>
+      <button @click="$emit('close')" class="close">{{ t("Cancel") }}</button>
       <button
         type="submit"
         form="add-record-form"
         style="background: #4078c0; color: #fff"
       >
-        Save
+        {{ t('Save') }}
       </button>
     </footer>
   </modal>
@@ -38,6 +40,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import { useI18n } from "vue-i18n";
 import Modal from "../../../shared/components/appModal.vue";
 import { GenerateId } from "../../../shared/utils/generateId";
 
@@ -47,7 +50,10 @@ export default defineComponent({
     Modal,
   },
   data() {
+    const { t } = useI18n();
+
     return {
+      t,
       recordTitle: "",
       recordDescription: "",
     };

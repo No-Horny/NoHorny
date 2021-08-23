@@ -1,7 +1,7 @@
 <template>
   <div class="full-page">
     <nav>
-      <h2>Settings</h2>
+      <h2>{{ t("Settings") }}</h2>
 
       <button @click="$router.go(-1)" v-if="$route.name !== 'home'">
         <icon icon="ion:chevron-back-outline" />
@@ -24,7 +24,7 @@
       </div> -->
 
       <div class="setting-section theme-settings">
-        <h3>Dark mode</h3>
+        <h3>{{ t("DarkMode") }}</h3>
 
         <span class="theme-switch-container">
           OFF
@@ -33,11 +33,14 @@
         </span>
       </div>
 
-      <!-- <div class="setting-section lang-settings">
-        <h3>Change your app language</h3>
+      <div class="setting-section lang-settings">
+        <h3>{{ t("ChangeYourAppLanguage") }}</h3>
 
-        <small>Nothing to see, yet</small>
-      </div> -->
+        <select v-model="locale">
+          <option value="en">English</option>
+          <option value="pt">Português</option>
+        </select>
+      </div>
     </div>
   </div>
 </template>
@@ -50,7 +53,10 @@ import {
   userPreferences,
   changeThemeToDark,
   changeThemeToLight,
+  changeLangToPt,
+  changeLangToEn,
 } from "../../../shared/user-preferences";
+import { useI18n } from "vue-i18n";
 
 export default defineComponent({
   name: "Settings",
@@ -59,7 +65,11 @@ export default defineComponent({
     SwitchButton,
   },
   data() {
+    const { locale, t } = useI18n();
+
     return {
+      t,
+      locale,
       isDark: false,
       userPreferences,
     };
@@ -71,6 +81,16 @@ export default defineComponent({
         changeThemeToDark(true);
       } else {
         changeThemeToLight(true);
+      }
+    },
+  },
+  watch: {
+    locale(val, oldVal) {
+      console.log(val);
+      if (val === "pt") {
+        changeLangToPt();
+      } else {
+        changeLangToEn();
       }
     },
   },

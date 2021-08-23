@@ -1,29 +1,37 @@
 <template>
   <div class="container">
-    <h2>Stop being horny</h2>
-    <rounded-action-button @click="howToGetAGoodStart"
-      >How to get a good start with NoFap?</rounded-action-button
-    >
-    <rounded-action-button @click="learnHowToControl" color="#85E9FF"
-      >Learn how to control your Desires</rounded-action-button
-    >
-    <rounded-action-button @click="reasonsWhy" color="#6DB9FF"
-      >Reasons Why You Should Start NoFap</rounded-action-button
-    >
-    <rounded-action-button @click="whyIsItSoHardToDoNoFap" color="#7c64ff"
-      >Why is it so hard to do NoFap?</rounded-action-button
-    >
+    <h2>{{ t("StopBeingHorny") }}</h2>
+    <rounded-action-button @click="howToGetAGoodStart">{{
+      t("HowToGetAGoodStart")
+    }}?</rounded-action-button>
+    <rounded-action-button @click="learnHowToControl" color="#85E9FF">{{
+      t("LearnHowToControlYourDesires")
+    }}</rounded-action-button>
+    <rounded-action-button @click="reasonsWhy" color="#6DB9FF">{{
+      t("ReasonsWhyYouShould")
+    }}</rounded-action-button>
+    <rounded-action-button @click="whyIsItSoHardToDoNoFap" color="#7c64ff">{{
+      t("WhyIsItSoHardToDoNoFap")
+    }}?</rounded-action-button>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import { useI18n } from "vue-i18n";
 import RoundedActionButton from "./roundedActionButton.vue";
 
 export default defineComponent({
   name: "StopBeingHorny",
   components: {
     RoundedActionButton,
+  },
+  data() {
+    const { t } = useI18n();
+
+    return {
+      t,
+    };
   },
   methods: {
     howToGetAGoodStart() {

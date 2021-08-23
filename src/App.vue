@@ -17,7 +17,7 @@
     </div>
 
     <footer>
-      <button class="close" @click="showNotWorkingYet = false">Close</button>
+      <button class="close" @click="showNotWorkingYet = false"></button>
       <a
         class="button"
         href="https://github.com/No-Horny/NoHorny-website/tree/beta_version"
@@ -35,6 +35,7 @@ import { defineComponent } from "vue";
 import TopBar from "./shared/components/topbar.vue";
 import Modal from "./shared/components/appModal.vue";
 import { userPreferences } from "./shared/user-preferences";
+import { useI18n } from "vue-i18n";
 
 export default defineComponent({
   name: "App",
@@ -43,7 +44,10 @@ export default defineComponent({
     TopBar,
   },
   data() {
+    const { t } = useI18n()
+
     return {
+      t,
       showNotWorkingYet: false,
     };
   },

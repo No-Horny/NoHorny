@@ -57,7 +57,8 @@
 - [x] Get user default theme
 - [x] Guided breathing v2
 - [x] More options, than breathing on panic button
-- [ ] Translation to other languages
+- [x] Add vue i18n
+- [x] Translation to portuguese
 
 <h3>ToDo before realease v1.2</h3>
 

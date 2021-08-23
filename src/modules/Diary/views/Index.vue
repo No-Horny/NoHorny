@@ -1,9 +1,9 @@
 <template>
   <div class="page">
     <strong v-if="records.length <= 0"
-      ><h3>You don't have records, yet!</h3>
+      ><h3>{{ t("YouDoNotHaveRecordsYet") }}!</h3>
       <br />
-      Add one clicking on the add button.</strong
+      {{ t("AddOneClickingOnTheAddButton") }}</strong
     >
 
     <div class="records" v-if="showRecords">
@@ -33,6 +33,7 @@ import { defineComponent } from "vue";
 import DiaryRecord from "../components/diaryRecord.vue";
 import AddRecordModal from "../components/addDiaryRecord.vue";
 import { Icon } from "@iconify/vue";
+import { useI18n } from "vue-i18n";
 
 export default defineComponent({
   name: "Diary",
@@ -42,7 +43,10 @@ export default defineComponent({
     AddRecordModal,
   },
   data() {
+    const { t } = useI18n();
+
     return {
+      t,
       showAddNewRecordModal: false,
       records: [],
       showRecords: false,

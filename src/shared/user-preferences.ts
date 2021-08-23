@@ -1,6 +1,6 @@
 interface IUserPreferences {
   theme: "dark" | "light";
-  lang: "en-US" | "pt-BR";
+  lang: "en" | "pt";
 }
 
 // Detect the user theme preference and apply to app default theme
@@ -14,15 +14,14 @@ if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
 if (!localStorage.getItem("user-preferences")) {
   localStorage.setItem(
     "user-preferences",
-    JSON.stringify({ theme: userThemePreference || "light", lang: "en-US" })
+    JSON.stringify({ theme: userThemePreference || "light", lang: "en" })
   );
 }
 
 const userPreferences = JSON.parse(
-  localStorage.getItem("user-preferences") || '{theme: "light", lang: "en-US"}'
+  localStorage.getItem("user-preferences") || '{theme: "light", lang: "en"}'
 ) as IUserPreferences;
 
-// Functions to manage theme
 function changeThemeToDark(fade?: boolean): void {
   userPreferences.theme = "dark";
   localStorage.setItem("user-preferences", JSON.stringify(userPreferences));
@@ -33,6 +32,7 @@ function changeThemeToDark(fade?: boolean): void {
   }
   document.body.classList.remove("light");
 }
+
 function changeThemeToLight(fade?: boolean): void {
   userPreferences.theme = "light";
   localStorage.setItem("user-preferences", JSON.stringify(userPreferences));
@@ -44,10 +44,22 @@ function changeThemeToLight(fade?: boolean): void {
   document.body.classList.remove("dark");
 }
 
+function changeLangToPt() {
+  userPreferences.lang = "pt";
+  localStorage.setItem("user-preferences", JSON.stringify(userPreferences));
+}
+
+function changeLangToEn() {
+  userPreferences.lang = "en";
+  localStorage.setItem("user-preferences", JSON.stringify(userPreferences));
+}
+
 export {
   IUserPreferences,
   userPreferences,
   userThemePreference,
   changeThemeToDark,
   changeThemeToLight,
+  changeLangToPt,
+  changeLangToEn,
 };

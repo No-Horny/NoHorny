@@ -15,14 +15,17 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import { useI18n } from "vue-i18n";
 
 export default defineComponent({
   name: "Breathing Modal",
   props: ["technique"],
   data() {
+    const { t } = useI18n();
+
     return {
+      t,
       visualReturnText: "",
-      // visualReturnNumber: 0,
       currentAnimation: `none`,
       animationDuration: 0,
     };
@@ -57,7 +60,7 @@ export default defineComponent({
       this.currentAnimation = "";
       this.breathingStep({
         stepTimerCount: 5,
-        prefixText: `Breathing starting in`,
+        prefixText: `${this.t("BreathingStartingIn")}`,
         nextStep: this.breathIn,
       });
     },
@@ -66,7 +69,7 @@ export default defineComponent({
       this.animationDuration = this.technique.steps[0];
       this.breathingStep({
         stepTimerCount: this.technique.steps[0],
-        prefixText: `Inhale for`,
+        prefixText: `${this.t("InhaleFor")}`,
         nextStep: this.hold,
       });
     },
@@ -75,7 +78,7 @@ export default defineComponent({
       this.animationDuration = this.technique.steps[1];
       this.breathingStep({
         stepTimerCount: this.technique.steps[1],
-        prefixText: `Hold for`,
+        prefixText: `${this.t("HoldFor")}`,
         nextStep: this.breathOut,
       });
     },
@@ -84,7 +87,7 @@ export default defineComponent({
       this.animationDuration = this.technique.steps[2];
       this.breathingStep({
         stepTimerCount: this.technique.steps[2],
-        prefixText: `Exhale for`,
+        prefixText: `${this.t("ExhaleFor")}`,
         nextStep: this.rest,
       });
     },
@@ -93,7 +96,7 @@ export default defineComponent({
       this.animationDuration = this.technique.steps[3];
       this.breathingStep({
         stepTimerCount: this.technique.steps[3],
-        prefixText: `Take a rest by`,
+        prefixText: `${this.t("TakeARestFor")}`,
         nextStep: this.breathIn,
       });
     },

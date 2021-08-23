@@ -1,17 +1,17 @@
 <template>
   <div class="streak-card">
     <small translate="no" class="streak-label"
-      >‎‎‏‏‎ ‎‏‏‎ ‎• {{ streaklabel.toUpperCase() }} •‏‏‎ ‎‏‏‎ ‎</small
+      >‎‎‏‏‎ ‎‏‏‎ ‎• {{ t("OldStreak").toUpperCase() }} •‏‏‎ ‎‏‏‎ ‎</small
     >
     <h2>{{ timer }}</h2>
-    <h3>Days, Hours, Minutes and Seconds.</h3>
+    <h3>{{ t("DHMS") }}</h3>
     <div>
       <span
-        ><strong>Started at:</strong>
+        ><strong>{{ t("StartedAt") }}:</strong>
         {{ new Date(startedTime).toLocaleString() }}</span
       >
       <span
-        ><strong>Finished at:</strong>
+        ><strong>{{ t("FinishedAt") }}:</strong>
         {{ new Date(endedTime).toLocaleString() }}</span
       >
     </div>

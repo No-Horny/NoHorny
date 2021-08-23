@@ -1,48 +1,47 @@
+import i18n from "../../../../../i18n";
+
 export interface IPhrase {
   phrase: string;
   author: string;
 }
 
+const { t } = i18n.global;
+
 export const phrases: IPhrase[] = [
   {
-    phrase:
-      "Learn as if you will live forever, live like you will die tomorrow.",
+    phrase: t('MahatmaGandhiPhrase1'),
     author: "Mahatma Gandhi",
   },
   {
-    phrase:
-      "One of the most difficult things is not to change society, but to change yourself.",
+    phrase: t('NelsonMandelaPhrase1'),
     author: "Nelson Mandela",
   },
   {
-    phrase: "Set your goals high, and don’t stop till you get there.",
+    phrase: t('BoJacksonPhrase1'),
     author: "Bo Jackson",
   },
   {
-    phrase: "Either you run the day or the day runs you.",
+    phrase: t('JimRohnPhrase1'),
     author: "Jim Rohn",
   },
   {
-    phrase:
-      "Life is like riding a bicycle. To keep your balance you must keep moving.",
+    phrase: t('AlbertEinsteinPhrase1'),
     author: "Albert Einstein",
   },
   {
-    phrase:
-      "True freedom is impossible without a mind made free by discipline.",
+    phrase: t('MortimerJAdlerPhrase1'),
     author: "Mortimer J. Adler",
   },
   {
-    phrase: "Don't let someone else's opinion of you become your reality.",
+    phrase: t('LesBrownPhrase1'),
     author: "Les Brown",
   },
   {
-    phrase: "Opportunities don't happen, you create them.",
+    phrase: t('ChrisGrosserPhrase1'),
     author: "Chris Grosser",
   },
   {
-    phrase:
-      "The road to success and the road to failure are almost exactly the same.",
+    phrase: t('ColinRDavisPhrase1'),
     author: "Colin R. Davis",
   },
 ];

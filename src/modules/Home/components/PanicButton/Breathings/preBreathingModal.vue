@@ -12,37 +12,37 @@
       <ul>
         <li v-if="techniques[breathingTechniqueIndex].steps[0] !== 0">
           <small
-            >Inhale for
-            {{ techniques[breathingTechniqueIndex].steps[0] }} seconds;</small
+            >{{ t('InhaleFor') }}
+            {{ techniques[breathingTechniqueIndex].steps[0] }} {{ t('SecondsTime') }};</small
           >
         </li>
         <li v-if="techniques[breathingTechniqueIndex].steps[1] !== 0">
           <small
-            >Hold for
-            {{ techniques[breathingTechniqueIndex].steps[1] }} seconds;</small
+            >{{ t('HoldFor') }}
+            {{ techniques[breathingTechniqueIndex].steps[1] }} {{ t('SecondsTime') }};</small
           >
         </li>
         <li v-if="techniques[breathingTechniqueIndex].steps[2] !== 0">
           <small
-            >Exhale for
-            {{ techniques[breathingTechniqueIndex].steps[2] }} seconds;</small
+            >{{ t('ExhaleFor') }}
+            {{ techniques[breathingTechniqueIndex].steps[2] }} {{ t('SecondsTime') }};</small
           >
         </li>
         <li v-if="techniques[breathingTechniqueIndex].steps[3] !== 0">
           <small
-            >Take a rest for
-            {{ techniques[breathingTechniqueIndex].steps[3] }} seconds;</small
+            >{{ t('TakeARestFor') }}
+            {{ techniques[breathingTechniqueIndex].steps[3] }} {{ t('SecondsTime') }};</small
           >
         </li>
       </ul>
     </div>
     <footer>
-      <button @click="$emit('close')" class="close">Return</button>
+      <button @click="$emit('close')" class="close">{{ t('Return') }}</button>
       <button
         @click="$emit('start')"
         style="background: rgb(64, 120, 192) !important; color: #fff"
       >
-        Start
+        {{ t('Start') }}
       </button>
     </footer>
   </modal>
@@ -50,6 +50,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import { useI18n } from "vue-i18n";
 import Modal from "../../../../../shared/components/appModal.vue";
 import { techniques } from "./techniques";
 
@@ -59,7 +60,10 @@ export default defineComponent({
     Modal,
   },
   data() {
+    const { t } = useI18n();
+
     return {
+      t,
       techniques,
     };
   },

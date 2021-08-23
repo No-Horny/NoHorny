@@ -31,6 +31,9 @@ export default defineComponent({
   font-size: 14px;
   transition: filter 0.2s;
   box-shadow: 0px 2px 6px rgb(0 0 0 / 25%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   &:hover {
     filter: brightness(0.8);
   }

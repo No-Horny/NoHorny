@@ -2,21 +2,25 @@
   <div class="record">
     <small>{{
       getDaysBetweenDates(updatedAt, new Date()).toFixed(0) === "0"
-        ? "Edited Today."
-        : `Edited ${getDaysBetweenDates(updatedAt, new Date()).toFixed(
+        ? `${t("EditedToday")}.`
+        : `${t("Edited")} ${getDaysBetweenDates(updatedAt, new Date()).toFixed(
             0
-          )} days ago`
+          )} ${t("DaysAgo")}.`
     }}</small>
     <div class="inputs">
-      <input type="text" placeholder="Record title" v-model="titleToEdit" />
+      <input
+        type="text"
+        :placeholder="t('RecordTitle')"
+        v-model="titleToEdit"
+      />
 
       <textarea
         v-model="descriptionToEdit"
-        placeholder="Record description"
+        :placeholder="t('RecordDescription')"
       ></textarea>
     </div>
 
-    <small> Click on title or description to edit.</small>
+    <small>{{ t("ClickOnTitleOrDescriptionToEdit") }}</small>
     <div class="controls">
       <button
         update
@@ -24,11 +28,11 @@
         @click="saveCurrentChanges"
       >
         <icon icon="ant-design:save-outlined" />
-        Save changes
+        {{ t("SaveChanges") }}
       </button>
       <button delete @click="deleteRecord">
         <icon icon="ant-design:delete-outlined" />
-        Delete record
+        {{ t("DeleteRecord") }}
       </button>
     </div>
   </div>
@@ -38,6 +42,7 @@
 import { defineComponent } from "vue";
 import Modal from "../../../shared/components/appModal.vue";
 import { Icon } from "@iconify/vue";
+import { useI18n } from "vue-i18n";
 
 export default defineComponent({
   name: "DiaryRecord",
@@ -46,7 +51,10 @@ export default defineComponent({
     Modal,
   },
   data() {
+    const { t } = useI18n();
+
     return {
+      t,
       title: "",
       titleToEdit: "",
       description: "",

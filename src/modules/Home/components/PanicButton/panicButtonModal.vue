@@ -1,10 +1,10 @@
 <template>
   <modal :class="showModal ? 'open' : 'closed'" @close="$emit('close')">
     <header class="modal-header">
-      <h3>Panic Button</h3>
+      <h3>{{ t("PanicButton2") }}</h3>
     </header>
     <div class="modal-body">
-      <p>What helps you feel calm?</p>
+      <p>{{ t("WhatHelpsYouFeelCalm") }}</p>
       <br />
       <div class="panic-button-chooses">
         <button
@@ -13,7 +13,7 @@
             $emit('close');
           "
         >
-          Breathing Techniques
+          {{ t("BreathingTechniques") }}
         </button>
         <button
           @click="
@@ -21,12 +21,12 @@
             $emit('close');
           "
         >
-          Random Motivational Phrase
+          {{ t("RandomMotivationalPhrase") }}
         </button>
       </div>
     </div>
     <footer>
-      <button @click="$emit('close')" class="close">Close</button>
+      <button @click="$emit('close')" class="close">{{ t("Close") }}</button>
     </footer>
   </modal>
   <choose-a-breathing-modal
@@ -41,6 +41,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import { useI18n } from "vue-i18n";
 import Modal from "../../../../shared/components/appModal.vue";
 import ChooseABreathingModal from "./Breathings/chooseABreathingModal.vue";
 import RandomPhraseModal from "./Phrases/phraseModal.vue";
@@ -53,7 +54,10 @@ export default defineComponent({
     RandomPhraseModal,
   },
   data() {
+    const { t } = useI18n();
+
     return {
+      t,
       showChooseBreathingModal: false,
       showRandomPhraseModal: false,
     };

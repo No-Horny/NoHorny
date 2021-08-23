@@ -4,15 +4,11 @@
       >‎‎‏‏‎ ‎‏‏‎ ‎• {{ streaklabel.toUpperCase() }} •‏‏‎ ‎‏‏‎ ‎</small
     >
     <h2>{{ timer }}</h2>
-    <h3>Days, Hours, Minutes and Seconds.</h3>
+    <h3>{{ t("DHMS") }}</h3>
     <div v-if="showActionButtons">
-      <!-- <button @click="$router.push('/streak-history')">
-        <icon icon="fluent:text-bullet-list-ltr-20-filled" />
-        STREAK HISTORY
-      </button> -->
       <button @click="showRelapseDialogModal = true">
         <icon icon="mdi:reload" />
-        RELAPSE STREAK
+        {{ t("RelapseStreak") }}
       </button>
     </div>
   </div>
@@ -21,14 +17,16 @@
     :class="showRelapseDialogModal ? 'open' : 'closed'"
     @close="showRelapseDialogModal = false"
   >
-    <header><h3>Relapse</h3></header>
-    <div class="modal-body">Do you really want to relapse?</div>
+    <header>
+      <h3>{{ t("Relapse") }}</h3>
+    </header>
+    <div class="modal-body">{{ t("DoYouReallyWantToRelapse") }}</div>
     <footer>
       <button @click="showRelapseDialogModal = false" class="close">
-        Cancel
+        {{ t("Cancel") }}
       </button>
       <button @click="resetStartTime" style="background: #4078c0; color: #fff">
-        Relapse
+        {{ t("Yes") }}
       </button>
     </footer>
   </modal>
@@ -37,14 +35,16 @@
     v-if="showAfterRalapseDialogModal"
     @close="showAfterRalapseDialogModal = false"
   >
-    <header><h3>Your streak is reseted!</h3></header>
-    <div class="modal-body">Try return more stronger!</div>
+    <header>
+      <h3>{{ t("YourStreakIsReseted") }}</h3>
+    </header>
+    <div class="modal-body">{{ t("TryReturnMoreStronger") }}</div>
     <footer>
       <button
         @click="showAfterRalapseDialogModal = false"
         style="background: #4078c0; color: #fff"
       >
-        Ok
+        {{ t('Ok') }}
       </button>
     </footer>
   </modal>
@@ -54,6 +54,7 @@
 import { defineComponent } from "vue";
 import { Icon } from "@iconify/vue";
 import Modal from "./appModal.vue";
+import { useI18n } from "vue-i18n";
 
 export default defineComponent({
   name: "StreakTimer",
@@ -73,7 +74,10 @@ export default defineComponent({
     },
   },
   data() {
+    const { t } = useI18n();
+
     return {
+      t,
       timer: "Loading...",
       startTime: new Date(
         localStorage.getItem("startTime") || this.createTimer()
