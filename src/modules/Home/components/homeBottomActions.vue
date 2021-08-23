@@ -2,18 +2,18 @@
   <div class="container">
     <rect-action-button @click="$router.push('/diary')">
       <icon icon="uil:diary" />
-      {{ t('NoFapDiary') }}
+      {{ t("NoFapDiary") }}
     </rect-action-button>
     <rect-action-button
       @click="$router.push('/streak-history')"
       color="#A090FF"
     >
       <icon icon="fluent:history-20-filled" />
-      {{ t('StreakHistory') }}
+      {{ t("StreakHistory") }}
     </rect-action-button>
     <rect-action-button color="#FFDD66" @click="showModal = true">
       <icon icon="ant-design:alert-filled" />
-      {{ t('PanicButton') }}
+      {{ t("PanicButton") }}
     </rect-action-button>
     <panic-button-modal :showModal="showModal" @close="showModal = false" />
   </div>

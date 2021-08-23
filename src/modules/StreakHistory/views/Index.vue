@@ -1,12 +1,12 @@
 <template>
   <div class="page">
-    <h2>{{ t('YourStreakHistory') }}</h2>
+    <h2>{{ t("YourStreakHistory") }}</h2>
     <streak-timer
       streaklabel="your current streak"
       :showActionButtons="false"
     />
     <div v-if="streaks.length > 0" class="have-streaks">
-      <h2>{{ t('OtherStreaks') }}</h2>
+      <h2>{{ t("OtherStreaks") }}</h2>
       <div class="old-streaks">
         <old-streak-timer
           v-for="(streak, key) in streaks"
@@ -17,9 +17,9 @@
         />
       </div>
     </div>
-    <span class="have-not-streaks" v-else
-      >{{ t('YouHaveNotOldStreaksToSee') }}</span
-    >
+    <span class="have-not-streaks" v-else>{{
+      t("YouHaveNotOldStreaksToSee")
+    }}</span>
   </div>
 </template>
 

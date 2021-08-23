@@ -8,7 +8,6 @@ if (typeof window !== "undefined") {
   import("./pwa");
 }
 
-
 const app = createApp(App);
 app.use(router);
 app.use(i18n);

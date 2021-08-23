@@ -44,7 +44,7 @@
         @click="showAfterRalapseDialogModal = false"
         style="background: #4078c0; color: #fff"
       >
-        {{ t('Ok') }}
+        {{ t("Ok") }}
       </button>
     </footer>
   </modal>

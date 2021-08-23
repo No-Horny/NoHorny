@@ -1,18 +1,18 @@
 <template>
   <div class="container">
     <h2>{{ t("StopBeingHorny") }}</h2>
-    <rounded-action-button @click="howToGetAGoodStart">{{
-      t("HowToGetAGoodStart")
-    }}?</rounded-action-button>
+    <rounded-action-button @click="howToGetAGoodStart"
+      >{{ t("HowToGetAGoodStart") }}?</rounded-action-button
+    >
     <rounded-action-button @click="learnHowToControl" color="#85E9FF">{{
       t("LearnHowToControlYourDesires")
     }}</rounded-action-button>
     <rounded-action-button @click="reasonsWhy" color="#6DB9FF">{{
       t("ReasonsWhyYouShould")
     }}</rounded-action-button>
-    <rounded-action-button @click="whyIsItSoHardToDoNoFap" color="#7c64ff">{{
-      t("WhyIsItSoHardToDoNoFap")
-    }}?</rounded-action-button>
+    <rounded-action-button @click="whyIsItSoHardToDoNoFap" color="#7c64ff"
+      >{{ t("WhyIsItSoHardToDoNoFap") }}?</rounded-action-button
+    >
   </div>
 </template>
 

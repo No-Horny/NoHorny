@@ -32,7 +32,7 @@
         form="add-record-form"
         style="background: #4078c0; color: #fff"
       >
-        {{ t('Save') }}
+        {{ t("Save") }}
       </button>
     </footer>
   </modal>

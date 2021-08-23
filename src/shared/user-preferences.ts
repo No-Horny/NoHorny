@@ -44,12 +44,12 @@ function changeThemeToLight(fade?: boolean): void {
   document.body.classList.remove("dark");
 }
 
-function changeLangToPt() {
+function changeLangToPt(): void {
   userPreferences.lang = "pt";
   localStorage.setItem("user-preferences", JSON.stringify(userPreferences));
 }
 
-function changeLangToEn() {
+function changeLangToEn(): void {
   userPreferences.lang = "en";
   localStorage.setItem("user-preferences", JSON.stringify(userPreferences));
 }

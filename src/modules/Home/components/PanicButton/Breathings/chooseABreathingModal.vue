@@ -3,7 +3,9 @@
     :class="showChooseBreathingModal ? 'open' : 'closed'"
     @close="$emit('close')"
   >
-    <header class="modal-header"><h3>{{ t('ChooseABreathingTechnique') }}</h3></header>
+    <header class="modal-header">
+      <h3>{{ t("ChooseABreathingTechnique") }}</h3>
+    </header>
     <div class="modal-body">
       <div
         class="breathing-picker"
@@ -27,7 +29,7 @@
         />
       </div>
       <footer>
-        <button @click="$emit('close')" class="close">{{ t('Close') }}</button>
+        <button @click="$emit('close')" class="close">{{ t("Close") }}</button>
       </footer>
     </div>
   </modal>
@@ -49,7 +51,7 @@ export default defineComponent({
     PreBreathingModal,
   },
   data() {
-    const { t } = useI18n()
+    const { t } = useI18n();
 
     return {
       t,

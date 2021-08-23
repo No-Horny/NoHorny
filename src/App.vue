@@ -44,7 +44,7 @@ export default defineComponent({
     TopBar,
   },
   data() {
-    const { t } = useI18n()
+    const { t } = useI18n();
 
     return {
       t,

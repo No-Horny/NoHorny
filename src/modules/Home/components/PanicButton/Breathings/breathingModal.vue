@@ -13,7 +13,7 @@
       />
     </div>
     <footer>
-      <button @click="$emit('close')" class="close">{{ t('Return') }}</button>
+      <button @click="$emit('close')" class="close">{{ t("Return") }}</button>
     </footer>
   </modal>
 </template>
@@ -42,7 +42,7 @@ export default defineComponent({
     },
   },
   data() {
-    const { t } = useI18n()
+    const { t } = useI18n();
 
     return {
       t,

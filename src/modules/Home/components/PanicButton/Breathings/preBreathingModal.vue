@@ -12,37 +12,41 @@
       <ul>
         <li v-if="techniques[breathingTechniqueIndex].steps[0] !== 0">
           <small
-            >{{ t('InhaleFor') }}
-            {{ techniques[breathingTechniqueIndex].steps[0] }} {{ t('SecondsTime') }};</small
+            >{{ t("InhaleFor") }}
+            {{ techniques[breathingTechniqueIndex].steps[0] }}
+            {{ t("SecondsTime") }};</small
           >
         </li>
         <li v-if="techniques[breathingTechniqueIndex].steps[1] !== 0">
           <small
-            >{{ t('HoldFor') }}
-            {{ techniques[breathingTechniqueIndex].steps[1] }} {{ t('SecondsTime') }};</small
+            >{{ t("HoldFor") }}
+            {{ techniques[breathingTechniqueIndex].steps[1] }}
+            {{ t("SecondsTime") }};</small
           >
         </li>
         <li v-if="techniques[breathingTechniqueIndex].steps[2] !== 0">
           <small
-            >{{ t('ExhaleFor') }}
-            {{ techniques[breathingTechniqueIndex].steps[2] }} {{ t('SecondsTime') }};</small
+            >{{ t("ExhaleFor") }}
+            {{ techniques[breathingTechniqueIndex].steps[2] }}
+            {{ t("SecondsTime") }};</small
           >
         </li>
         <li v-if="techniques[breathingTechniqueIndex].steps[3] !== 0">
           <small
-            >{{ t('TakeARestFor') }}
-            {{ techniques[breathingTechniqueIndex].steps[3] }} {{ t('SecondsTime') }};</small
+            >{{ t("TakeARestFor") }}
+            {{ techniques[breathingTechniqueIndex].steps[3] }}
+            {{ t("SecondsTime") }};</small
           >
         </li>
       </ul>
     </div>
     <footer>
-      <button @click="$emit('close')" class="close">{{ t('Return') }}</button>
+      <button @click="$emit('close')" class="close">{{ t("Return") }}</button>
       <button
         @click="$emit('start')"
         style="background: rgb(64, 120, 192) !important; color: #fff"
       >
-        {{ t('Start') }}
+        {{ t("Start") }}
       </button>
     </footer>
   </modal>
