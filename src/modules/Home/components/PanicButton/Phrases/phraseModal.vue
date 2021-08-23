@@ -29,7 +29,7 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import Modal from "../../../../../shared/components/appModal.vue";
-import { phrases } from "./phrases";
+import { IPhrase, phrases } from "./phrases";
 
 export default defineComponent({
   name: "PhraseModal",
@@ -39,7 +39,7 @@ export default defineComponent({
   data() {
     return {
       phrases,
-      phrase: {},
+      phrase: {} as IPhrase,
     };
   },
   props: {
