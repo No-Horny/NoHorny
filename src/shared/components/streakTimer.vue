@@ -78,7 +78,7 @@ export default defineComponent({
 
     return {
       t,
-      timer: "Loading...",
+      timer: `${t("Loading")}...`,
       startTime: new Date(
         localStorage.getItem("startTime") || this.createTimer()
       ),
