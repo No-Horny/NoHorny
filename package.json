@@ -3,21 +3,35 @@
   "license": "MIT",
   "name": "no-horny",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "vue-tsc --noEmit && vite build",
     "serve": "vite preview",
-    "deploy": "vercel --prod"
+    "deploy": "yarn prettier --write . && vercel --prod",
+    "checkout": "eslint --fix . && prettier --write .",
+    "eslint": "eslint --fix .",
+    "prettier": "prettier --write ."
+  },
+  "lint-staged": {
+    "**/*": "eslint . --fix && prettier --write --ignore-unknown"
   },
   "dependencies": {
-    "axios": "^0.21.1",
-    "sweetalert2": "^11.0.18",
     "vue": "^3.0.5",
+    "vue-i18n": "^9.1.7",
     "vue-router": "^4.0.10"
   },
   "devDependencies": {
     "@iconify/vue": "^3.0.0-beta.1",
+    "@intlify/vite-plugin-vue-i18n": "^2.4.0",
+    "@typescript-eslint/eslint-plugin": "^4.29.2",
+    "@typescript-eslint/parser": "^4.29.2",
     "@vitejs/plugin-vue": "^1.2.4",
     "@vue/compiler-sfc": "^3.0.5",
+    "@vuedx/typescript-plugin-vue": "^0.7.4",
+    "eslint": "^7.32.0",
+    "eslint-plugin-vue": "^7.16.0",
+    "husky": "^7.0.1",
+    "lint-staged": "^11.1.2",
+    "prettier": "2.3.2",
     "sass": "^1.35.2",
     "typescript": "^4.3.2",
     "vercel": "^23.0.1",

@@ -1,6 +1,8 @@
 @use "./variables" as vars;
+@import "./themes/dark.scss";
+
 * {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -14,8 +16,12 @@
 body {
   background: vars.$bg_primary;
   color: vars.$color_primary;
+  &.fade {
+    transition: background-color 0.3s;
+  }
 }
-.only-screen-reader, .osr {
+.only-screen-reader,
+.osr {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -26,9 +32,10 @@ body {
   white-space: nowrap;
   border-width: 0;
 }
-button, a {
+button,
+a {
   cursor: pointer;
-	-webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
 }
 .page {
   text-align: center;
@@ -36,10 +43,24 @@ button, a {
   flex-direction: column;
   align-items: center;
   margin-bottom: 58px;
+  h2:first-child {
+    font-weight: 600;
+    margin-top: 0 !important;
+  }
   > h2 {
     margin: 16px 0;
-    &:first-child {
-      margin-top: 0 !important;
-    }
+  }
+}
+.full-page {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  z-index: 9997;
+  h2:first-child {
+    font-weight: 600;
   }
 }
