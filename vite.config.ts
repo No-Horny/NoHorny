@@ -15,7 +15,7 @@ export default defineConfig({
       },
     }),
     vueI18n({
-      include: path.resolve(__dirname, "./src/locales/**"),
+      include: path.resolve(__dirname, "./src/i18n/locales/**"),
     }),
     VitePWA({
       registerType: "autoUpdate",
@@ -54,4 +54,9 @@ export default defineConfig({
       workbox: {},
     }),
   ],
+  resolve: {
+    alias: {
+      "@/": `${path.resolve(__dirname, "src")}/`,
+    },
+  },
 });

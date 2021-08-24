@@ -41,8 +41,8 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import { useI18n } from "vue-i18n";
-import Modal from "../../../shared/components/appModal.vue";
-import { GenerateId } from "../../../shared/utils/generateId";
+import Modal from "@/shared/components/appModal.vue";
+import { GenerateId } from "@/shared/utils/generateId";
 
 export default defineComponent({
   name: "AddDiaryRecord",

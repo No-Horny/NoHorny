@@ -36,9 +36,13 @@
       <div class="setting-section lang-settings">
         <h3>{{ t("ChangeYourAppLanguage") }}</h3>
 
-        <select v-model="locale">
-          <option value="en">English</option>
-          <option value="pt">Português</option>
+        <select v-model="locale" class="select-language">
+          <option value="en" :selected="userPreferences.lang === 'en'">
+            English
+          </option>
+          <option value="pt" :selected="userPreferences.lang === 'pt'">
+            Português
+          </option>
         </select>
       </div>
     </div>
@@ -66,7 +70,6 @@ export default defineComponent({
   },
   data() {
     const { locale, t } = useI18n();
-
     return {
       t,
       locale,
@@ -86,7 +89,6 @@ export default defineComponent({
   },
   watch: {
     locale(val, oldVal) {
-      console.log(val);
       if (val === "pt") {
         changeLangToPt();
       } else {
@@ -105,6 +107,14 @@ export default defineComponent({
 <style lang="scss" scoped>
 @import "../../../styles/variables.scss";
 
+.select-language {
+  width: $default_width;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  color: #24242d;
+  background: transparent;
+}
 nav {
   width: $default_width;
   display: flex;

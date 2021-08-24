@@ -1,10 +1,10 @@
 import { RouteRecordRaw } from "vue-router";
 
-import homeRouter from "../modules/Home/router";
-import diaryRouter from "../modules/Diary/router";
-import settingsRouter from "../modules/Settings/router";
-import streakHistoryRouter from "../modules/StreakHistory/router";
-import page404Router from "../modules/404/router";
+import homeRouter from "@/modules/Home/router";
+import diaryRouter from "@/modules/Diary/router";
+import settingsRouter from "@/modules/Settings/router";
+import streakHistoryRouter from "@/modules/StreakHistory/router";
+import page404Router from "@/modules/404/router";
 
 let routes: RouteRecordRaw[] = [];
 

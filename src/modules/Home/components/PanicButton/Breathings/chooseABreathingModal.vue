@@ -6,14 +6,14 @@
     <header class="modal-header">
       <h3>{{ t("ChooseABreathingTechnique") }}</h3>
     </header>
-    <div class="modal-body">
+    <div class="modal-body" v-if="showChooseBreathingModal">
       <div
         class="breathing-picker"
         v-for="(technique, index) in techniques"
         :key="index"
       >
         <button @click="technique.showPreBreathingModal = true">
-          {{ technique.name }}
+          {{ technique.name[userPreferences.lang] }}
         </button>
 
         <pre-breathing-modal
@@ -38,9 +38,10 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import { useI18n } from "vue-i18n";
-import Modal from "../../../../../shared/components/appModal.vue";
+import Modal from "@/shared/components/appModal.vue";
 import BreathingModal from "./breathingModal.vue";
 import PreBreathingModal from "./preBreathingModal.vue";
+import { userPreferences } from "@/shared/user-preferences";
 import { techniques } from "./techniques";
 
 export default defineComponent({
@@ -56,6 +57,7 @@ export default defineComponent({
     return {
       t,
       techniques,
+      userPreferences,
       showBreathingTechniqueModal1: false,
       showBreathingTechniqueModal2: false,
     };
