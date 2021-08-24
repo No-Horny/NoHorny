@@ -11,10 +11,25 @@ if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
   userThemePreference = "light";
 }
 
+let userLangPreferences = "";
+if (
+  Array.from(window.navigator.language)
+    .splice(0, 2)
+    .toString()
+    .replace(/,/g, "") === "pt"
+) {
+  userLangPreferences = "pt";
+} else {
+  userLangPreferences = "en";
+}
+
 if (!localStorage.getItem("user-preferences")) {
   localStorage.setItem(
     "user-preferences",
-    JSON.stringify({ theme: userThemePreference || "light", lang: "en" })
+    JSON.stringify({
+      theme: userThemePreference || "light",
+      lang: userLangPreferences || "en",
+    })
   );
 }
 
@@ -22,44 +37,34 @@ const userPreferences = JSON.parse(
   localStorage.getItem("user-preferences") || '{theme: "light", lang: "en"}'
 ) as IUserPreferences;
 
-function changeThemeToDark(fade?: boolean): void {
-  userPreferences.theme = "dark";
-  localStorage.setItem("user-preferences", JSON.stringify(userPreferences));
-
-  document.body.classList.add("dark");
-  if (fade) {
+class changeUserPreference {
+  public theme(newTheme: "dark" | "light") {
+    userPreferences.theme = newTheme;
+    if (newTheme === "dark") {
+      document.body.classList.add("dark");
+      document.body.classList.remove("light");
+    } else {
+      document.body.classList.add("light");
+      document.body.classList.remove("dark");
+    }
     document.body.classList.add("fade");
+
+    this.saveChanges();
   }
-  document.body.classList.remove("light");
-}
-
-function changeThemeToLight(fade?: boolean): void {
-  userPreferences.theme = "light";
-  localStorage.setItem("user-preferences", JSON.stringify(userPreferences));
-
-  document.body.classList.add("light");
-  if (fade) {
-    document.body.classList.add("fade");
+  public lang(newLang: "pt" | "en") {
+    userPreferences.lang = newLang;
+    this.saveChanges();
   }
-  document.body.classList.remove("dark");
+  private saveChanges() {
+    localStorage.setItem("user-preferences", JSON.stringify(userPreferences));
+  }
 }
 
-function changeLangToPt(): void {
-  userPreferences.lang = "pt";
-  localStorage.setItem("user-preferences", JSON.stringify(userPreferences));
-}
-
-function changeLangToEn(): void {
-  userPreferences.lang = "en";
-  localStorage.setItem("user-preferences", JSON.stringify(userPreferences));
-}
+const ChangeUserPreference = new changeUserPreference();
 
 export {
   IUserPreferences,
   userPreferences,
   userThemePreference,
-  changeThemeToDark,
-  changeThemeToLight,
-  changeLangToPt,
-  changeLangToEn,
+  ChangeUserPreference,
 };

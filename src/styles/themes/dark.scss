@@ -9,6 +9,18 @@ body.dark {
       color: $color_primary_dark !important;
     }
   }
+  .feedback-form {
+    input,
+    textarea {
+      background: $button_bg_dark !important;
+      color: $color_primary_dark !important;
+    }
+  }
+  .project-info {
+    a {
+      color: $color_primary_dark !important;
+    }
+  }
   .top-bar {
     background: $navbar_primary_dark !important;
     .logo {
