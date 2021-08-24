@@ -62,14 +62,14 @@
           </router-link>
         </span>
         <span
-          >{{ t("MadeWithLoveBy")
-          }}<a
+          >{{ t("MadeWithLoveBy") }}&nbsp;
+          <a
             href="http://github.com/PatoGordo"
             target="_blank"
             rel="noopener noreferrer"
           >
-            PatoGordo
-          </a>
+            PatoGordo</a
+          >
         </span>
       </div>
     </div>
