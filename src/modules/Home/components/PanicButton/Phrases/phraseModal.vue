@@ -3,9 +3,9 @@
     <header>
       <h3>{{ t("RandomMotivationalPhrase") }}</h3>
     </header>
-    <div class="modal-body">
+    <div class="modal-body" v-if="showModal">
       <p>
-        <cite>{{ phrase.phrase }}</cite>
+        <cite>{{ phrase.phrase[userPreferences.lang] }}</cite>
       </p>
       <small
         ><em>~ {{ phrase.author }}</em></small
@@ -29,7 +29,8 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import { useI18n } from "vue-i18n";
-import Modal from "../../../../../shared/components/appModal.vue";
+import Modal from "@/shared/components/appModal.vue";
+import { userPreferences } from "@/shared/user-preferences";
 import { IPhrase, phrases } from "./phrases";
 
 export default defineComponent({
@@ -42,6 +43,7 @@ export default defineComponent({
 
     return {
       t,
+      userPreferences,
       phrases,
       phrase: {} as IPhrase,
     };

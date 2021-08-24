@@ -4,9 +4,11 @@
     @close="$emit('close')"
   >
     <header class="modal-header">
-      <h3>{{ techniques[breathingTechniqueIndex].name }}</h3>
+      <h3>
+        {{ techniques[breathingTechniqueIndex].name[userPreferences.lang] }}
+      </h3>
     </header>
-    <div class="modal-body">
+    <div class="modal-body" v-if="showBreathingModal">
       <breathing-guide
         v-if="showBreathingModal"
         :technique="techniques[breathingTechniqueIndex]"
@@ -21,7 +23,8 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import BreathingGuide from "./breathing.vue";
-import Modal from "../../../../../shared/components/appModal.vue";
+import Modal from "@/shared/components/appModal.vue";
+import { userPreferences } from "@/shared/user-preferences";
 import { techniques } from "./techniques";
 import { useI18n } from "vue-i18n";
 
@@ -45,6 +48,7 @@ export default defineComponent({
     const { t } = useI18n();
 
     return {
+      userPreferences,
       t,
       techniques,
     };

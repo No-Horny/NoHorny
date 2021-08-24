@@ -20,7 +20,9 @@
     <header>
       <h3>{{ t("Relapse") }}</h3>
     </header>
-    <div class="modal-body">{{ t("DoYouReallyWantToRelapse") }}</div>
+    <div class="modal-body" v-if="showRelapseDialogModal">
+      {{ t("DoYouReallyWantToRelapse") }}
+    </div>
     <footer>
       <button @click="showRelapseDialogModal = false" class="close">
         {{ t("Cancel") }}

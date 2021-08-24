@@ -32,9 +32,9 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import TopBar from "./shared/components/topbar.vue";
-import Modal from "./shared/components/appModal.vue";
-import { userPreferences } from "./shared/user-preferences";
+import TopBar from "@/shared/components/topbar.vue";
+import Modal from "@/shared/components/appModal.vue";
+import { userPreferences } from "@/shared/user-preferences";
 import { useI18n } from "vue-i18n";
 
 export default defineComponent({

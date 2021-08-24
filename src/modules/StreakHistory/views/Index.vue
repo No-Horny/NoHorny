@@ -26,7 +26,7 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import { useI18n } from "vue-i18n";
-import StreakTimer from "../../../shared/components/streakTimer.vue";
+import StreakTimer from "@/shared/components/streakTimer.vue";
 import OldStreakTimer from "../components/oldStreakTimer.vue";
 
 export default defineComponent({
