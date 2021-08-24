@@ -35,6 +35,7 @@ import { defineComponent } from "vue";
 import TopBar from "@/shared/components/topbar.vue";
 import Modal from "@/shared/components/appModal.vue";
 import { userPreferences } from "@/shared/user-preferences";
+import { analytics } from "@/shared/services/firebase";
 import { useI18n } from "vue-i18n";
 
 export default defineComponent({
@@ -52,6 +53,7 @@ export default defineComponent({
     };
   },
   created() {
+    analytics();
     document.body.classList.add(userPreferences.theme);
   },
 });

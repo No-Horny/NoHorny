@@ -45,6 +45,33 @@
           </option>
         </select>
       </div>
+
+      <div class="project-info">
+        <a
+          href="https://github.com/No-Horny/NoHorny"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <icon icon="akar-icons:github-fill" />
+          {{ t("ProjectRepositoryOnGithub") }}
+        </a>
+        <span>
+          <router-link to="/feedback">
+            <icon icon="fluent:person-feedback-20-filled" />
+            {{ t("GiveUsYourFeedback") }}.
+          </router-link>
+        </span>
+        <span
+          >{{ t("MadeWithLoveBy")
+          }}<a
+            href="http://github.com/PatoGordo"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            PatoGordo
+          </a>
+        </span>
+      </div>
     </div>
   </div>
 </template>
@@ -55,10 +82,7 @@ import SwitchButton from "../components/switchButton.vue";
 import { defineComponent } from "vue";
 import {
   userPreferences,
-  changeThemeToDark,
-  changeThemeToLight,
-  changeLangToPt,
-  changeLangToEn,
+  ChangeUserPreference,
 } from "../../../shared/user-preferences";
 import { useI18n } from "vue-i18n";
 
@@ -80,19 +104,20 @@ export default defineComponent({
   methods: {
     handleThemes() {
       this.isDark = !this.isDark;
+
       if (this.isDark) {
-        changeThemeToDark(true);
+        ChangeUserPreference.theme("dark");
       } else {
-        changeThemeToLight(true);
+        ChangeUserPreference.theme("light");
       }
     },
   },
   watch: {
-    locale(val, oldVal) {
+    locale(val) {
       if (val === "pt") {
-        changeLangToPt();
+        ChangeUserPreference.lang("pt");
       } else {
-        changeLangToEn();
+        ChangeUserPreference.lang("en");
       }
     },
   },
@@ -107,6 +132,34 @@ export default defineComponent({
 <style lang="scss" scoped>
 @import "../../../styles/variables.scss";
 
+.project-info {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #24242d;
+    text-decoration: underline;
+    svg {
+      width: 26px;
+      height: 26px;
+    }
+  }
+}
 .select-language {
   width: $default_width;
   padding: 12px;
