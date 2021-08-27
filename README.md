@@ -90,4 +90,5 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/9a7a999d-647d-420f-b1a8-4a51c3b94f98/deploy-status)](https://app.netlify.com/sites/no-horny/deploys)
 [![Vercel Status](https://shields.io/github/deployments/no-horny/nohorny/production?label=Vercel%20Deploy&labelColor=3F454B&color=51FF96)](https://no-horny.vercel.app)
+
 <!-- [![Vercel Status](https://therealsujitk-vercel-badge.vercel.app/?app=no-horny&style=for-the-badge)](https://no-horny.vercel.app) -->

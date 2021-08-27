@@ -17,7 +17,7 @@ routes = routes.concat(
   settingsRouter,
   page404Router,
   streakHistoryRouter,
-  diaryRouter,
+  diaryRouter
 );
 
 export { routes };
