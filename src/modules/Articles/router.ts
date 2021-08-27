@@ -1,4 +1,5 @@
 import Index from "./views/Index.vue";
+import Article from "./views/Article.vue";
 
 export default [
   {
@@ -6,5 +7,11 @@ export default [
     name: "articles",
     title: "Articles",
     component: Index,
+  },
+  {
+    path: "/article/:id",
+    name: "article",
+    title: "Article",
+    component: Article,
   },
 ];
