@@ -22,8 +22,14 @@
       </span>
 
       <div v-if="appArticles[Number($route.params.id)].references">
-        <br /><br />
-        <h4>{{ appArticles[Number($route.params.id)].referencesTitle }}</h4>
+        <br />
+        <h4>
+          {{
+            appArticles[Number($route.params.id)].referencesTitle[
+              userPreferences.lang
+            ]
+          }}
+        </h4>
         <ul>
           <li
             v-for="(reference, index) in appArticles[Number($route.params.id)]
@@ -34,14 +40,13 @@
               :href="reference.url"
               target="_blank"
               rel="noopener noreferrer"
-              >{{ reference.title }}</a
+              >{{ reference.title[userPreferences.lang] }}</a
             >
           </li>
         </ul>
       </div>
 
       <div v-if="appArticles[Number($route.params.id)].phrase.havePhrase">
-        <br />
         <br />
         <p>
           <cite
@@ -89,6 +94,10 @@ export default defineComponent({
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
+a {
+  color: #00a2ff;
+  text-decoration: underline;
 }
 h3 {
   font-weight: 500;
