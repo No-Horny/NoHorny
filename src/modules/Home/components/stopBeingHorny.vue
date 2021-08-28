@@ -1,16 +1,20 @@
 <template>
   <div class="container">
     <h2>{{ t("StopBeingHorny") }}</h2>
-    <rounded-action-button @click="howToGetAGoodStart"
+    <rounded-action-button @click="$router.push('/article/0')"
       >{{ t("HowToGetAGoodStart") }}?</rounded-action-button
     >
-    <rounded-action-button @click="learnHowToControl" color="#85E9FF">{{
-      t("LearnHowToControlYourDesires")
-    }}</rounded-action-button>
-    <rounded-action-button @click="reasonsWhy" color="#6DB9FF">{{
-      t("ReasonsWhyYouShould")
-    }}</rounded-action-button>
-    <rounded-action-button @click="whyIsItSoHardToDoNoFap" color="#7c64ff"
+    <rounded-action-button
+      @click="$router.push('/article/1')"
+      color="#85E9FF"
+      >{{ t("LearnHowToControlYourDesires") }}</rounded-action-button
+    >
+    <rounded-action-button
+      @click="$router.push('/article/2')"
+      color="#6DB9FF"
+      >{{ t("ReasonsWhyYouShould") }}</rounded-action-button
+    >
+    <rounded-action-button @click="$router.push('/article/3')" color="#7c64ff"
       >{{ t("WhyIsItSoHardToDoNoFap") }}?</rounded-action-button
     >
   </div>
@@ -32,22 +36,6 @@ export default defineComponent({
     return {
       t,
     };
-  },
-  methods: {
-    howToGetAGoodStart() {
-      window.location.href = "https://www.youtube.com/watch?v=xpCq0Bv2BAI";
-    },
-    learnHowToControl() {
-      window.location.href =
-        "https://medium.com/mind-cafe/how-to-control-your-desires-and-live-a-life-of-self-control-17b7722b4877";
-    },
-    reasonsWhy() {
-      window.location.href =
-        "https://mrmindblowing.com/25-crazy-benefits-of-nofap-the-superpowers-of-nofap/";
-    },
-    whyIsItSoHardToDoNoFap() {
-      window.location.href = "https://www.youtube.com/watch?v=pXIjRdzRDXE";
-    },
   },
 });
 </script>

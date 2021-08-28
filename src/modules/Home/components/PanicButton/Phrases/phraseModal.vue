@@ -5,7 +5,7 @@
     </header>
     <div class="modal-body" v-if="showModal">
       <p>
-        <cite>{{ phrase[userPreferences.lang] }}</cite>
+        <cite>❝{{ phrase[userPreferences.lang] }}❞</cite>
       </p>
       <small
         ><em>~ {{ phrase.author }}</em></small
