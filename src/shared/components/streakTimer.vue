@@ -6,12 +6,48 @@
     <h2>{{ timer }}</h2>
     <h3>{{ t("DHMS") }}</h3>
     <div v-if="showActionButtons">
+      <button @click="showStreakTimerSettings = true">
+        <icon icon="ci:settings-filled" />
+        {{ t("Settings") }}
+      </button>
       <button @click="showRelapseDialogModal = true">
         <icon icon="mdi:reload" />
         {{ t("RelapseStreak") }}
       </button>
     </div>
   </div>
+
+  <modal
+    :class="showStreakTimerSettings ? 'open' : 'closed'"
+    @close="showStreakTimerSettings = false"
+  >
+    <header>
+      <h3>{{ t("StreakTimerSettings") }}</h3>
+    </header>
+    <div class="modal-body streak-timer-settings">
+      <p>
+        <strong>{{ t("ChangeYourStreakStartTime") }}</strong>
+      </p>
+      <br />
+      <input
+        type="datetime-local"
+        v-model="newStartTime"
+        class="input-change-start-time"
+        :max="new Date().toISOString().substring(0, 16)"
+      />
+    </div>
+    <footer>
+      <button class="close" @click="showStreakTimerSettings = false">
+        {{ t("Close") }}
+      </button>
+      <button
+        @click="saveNewStartTime"
+        style="background: #4078c0; color: #fff"
+      >
+        {{ t("Save") }}
+      </button>
+    </footer>
+  </modal>
 
   <modal
     :class="showRelapseDialogModal ? 'open' : 'closed'"
@@ -86,6 +122,8 @@ export default defineComponent({
       ),
       showRelapseDialogModal: false,
       showAfterRalapseDialogModal: false,
+      showStreakTimerSettings: false,
+      newStartTime: "",
     };
   },
   methods: {
@@ -111,6 +149,22 @@ export default defineComponent({
       this.showAfterRalapseDialogModal = true;
       return this.startTime;
     },
+    saveNewStartTime() {
+      var newStartDate = new Date(this.newStartTime);
+      var now = new Date();
+
+      // check if new start date is greater than current date
+      // if is save as now
+      if (newStartDate >= now) {
+        localStorage.setItem("startTime", `${new Date()}`);
+        this.showStreakTimerSettings = false;
+        return (this.startTime = new Date());
+      } else {
+        localStorage.setItem("startTime", `${new Date(this.newStartTime)}`);
+        this.showStreakTimerSettings = false;
+        return (this.startTime = new Date(this.newStartTime));
+      }
+    },
   },
   mounted() {
     window.setInterval(() => {
@@ -134,6 +188,24 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 @import "../../styles/variables.scss";
+
+.streak-timer-settings {
+  display: flex;
+  flex-direction: center;
+  align-items: center;
+  p,
+  strong {
+    width: 100%;
+    text-align: start;
+  }
+  > input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #444;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+}
 
 .streak-card {
   width: $default_width;
@@ -162,7 +234,7 @@ export default defineComponent({
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     margin-top: 8px;
     button {
       display: flex;
