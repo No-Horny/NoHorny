@@ -123,7 +123,9 @@ export default defineComponent({
       showRelapseDialogModal: false,
       showAfterRalapseDialogModal: false,
       showStreakTimerSettings: false,
-      newStartTime: "",
+      newStartTime: new Date(localStorage.getItem("startTime") || new Date())
+        .toISOString()
+        .substring(0, 16),
     };
   },
   methods: {
