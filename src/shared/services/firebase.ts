@@ -1,8 +1,7 @@
-import firebase from "firebase/app";
-import "firebase/analytics";
-import "firebase/firestore";
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore/lite";
 
-const app = firebase.initializeApp({
+const app = initializeApp({
   apiKey: "AIzaSyDrO2F4oMcS-Ha5WQfZFr_fCInhzGZ_ErY",
   authDomain: "nohorny-823dc.firebaseapp.com",
   projectId: "nohorny-823dc",
@@ -12,7 +11,6 @@ const app = firebase.initializeApp({
   measurementId: "G-MQKBR913BQ",
 });
 
-const db = firebase.firestore();
-const analytics = firebase.analytics;
+const db = getFirestore(app);
 
-export { app, db, analytics };
+export { app, db };
