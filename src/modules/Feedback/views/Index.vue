@@ -51,6 +51,7 @@ import { db } from "@/shared/services/firebase";
 import { defineComponent, ref } from "vue";
 import Modal from "@/shared/components/appModal.vue";
 import { useI18n } from "vue-i18n";
+import { addDoc, collection } from "firebase/firestore/lite";
 
 export default defineComponent({
   name: "Feedback",
@@ -65,10 +66,10 @@ export default defineComponent({
 
     const { t } = useI18n();
 
-    const feedbackCollection = db.collection("feedbacks");
+    const feedbackCollection = collection(db, "feedbacks");
 
     async function handleSendFeedback() {
-      await feedbackCollection.add({
+      await addDoc(feedbackCollection, {
         name: name.value,
         email: email.value || "unkown-email",
         message: message.value,
