@@ -2,11 +2,11 @@
   <img src="https://raw.githubusercontent.com/No-Horny/NoHorny-images/main/NoHorny-Wide-Icon.svg" width="360px" align="center">
 </h1>
 <div align="center">
-  <img src="https://img.shields.io/static/v1?label=License&message=MIT&color=51FF96&labelColor=3F454B" alt="MIT License">
+  <img src="https://img.shields.io/static/v1?label=License&message=GPL-3.0&color=51FF96&labelColor=3F454B" alt="GPL-3.0 License">
   &#8205;&#8205;
   <img src="https://img.shields.io/static/v1?label=Version&message=1.2&color=51FF96&labelColor=51FF96" alt="Version 1.2">
   &#8205;&#8205;
-  <img src="https://img.shields.io/static/v1?label=Open&message=Source&color=3F454B&labelColor=51FF96" alt="NLW Togheter" />
+  <img src="https://img.shields.io/static/v1?label=Open&message=Source&color=3F454B&labelColor=51FF96" alt="open source" />
 </div>
 <h2>About Project</h2>
 <p>No Horny is a open source project to help you stop being horny, help you on NoFap, and on self improvement</p>
@@ -20,7 +20,6 @@
 <p>The website is developed focused on offline first and mobile first</p>
 <h3>Features</h3>
 <ul>
-
   <li>
     <a href="https://vitejs.dev">
       <img align="center" alt="ViteJs" height="20" width="30" src="https://raw.githubusercontent.com/vitejs/docs-cn/main/public/logo.svg">
@@ -76,12 +75,57 @@
     </a>
   </li>
 </ul>
+
+<h3>How to run?</h3>
+
+<h4>Dev server</h4>
+
+```bash
+
+yarn && yarn dev
+
+```
+
+<h4>Prod server</h4>
+
+```bash
+
+yarn && yarn build && yarn serve
+
+```
+
+<h4>Change app firebase config</h4>
+
+Access the file in (src > shared > services > firebase.ts)
+
+```ts
+
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore/lite";
+
+const app = initializeApp({
+  apiKey: "Your firebase apiKey",
+  authDomain: "Your firebase authDomain",
+  projectId: "Your firebase projectId",
+  storageBucket: "Your firebase storageBucket",
+  messagingSenderId: "Your firebase messagingSenderId",
+  appId: "Your firebase appId",
+  measurementId: "Your analytics G-Tag",
+});
+
+const db = getFirestore(app);
+
+export { app, db };
+
+```
+
 <h3>What new on version 1.2?</h3>
 
 - New design
 - Streak history
 - No Fap diary
 - Guided breathings
+
 - Dark theme
 - Translation to portuguese
 - New app icon
